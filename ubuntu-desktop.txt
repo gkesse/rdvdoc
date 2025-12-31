@@ -1,0 +1,9 @@
+#------------------------------------------------
+# apprendre ubuntu-desktop
+#------------------------------------------------
+# configurer le reseau wifi
+#------------------------------------------------
+-> cliquer sur l icone wifi
+-> available networks -> "<nom reseau wifi>"
+-> "<mot de passe cle wifi>"
+#------------------------------------------------

@@ -1,0 +1,18 @@
+#------------------------------------------------
+# apprendre freebox-connect
+#------------------------------------------------
+# se connecter a un freebox-mini-4k
+#------------------------------------------------
+-> ouvrir l application freebox-connect sur un smartphone
+-> rapprocher le smartphone d un freebox-mini-4k
+-> lancer la recherche du freebox-mini-4k
+-> la connexion est automatique
+#------------------------------------------------
+# modifier le nom de son reseau wifi
+# modifier le mot de passe de son reseau wifi
+#------------------------------------------------
+-> menu -> reseau -> reseau wifi -> modifier
+-> reseau wifi -> "<nom reseau wifi>"
+-> cle wifi -> "<mot de passe wifi>"
+-> enregistrer les modifications
+#------------------------------------------------

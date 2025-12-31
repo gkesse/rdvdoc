@@ -1,0 +1,19 @@
+#------------------------------------------------
+# apprendre github
+#------------------------------------------------
+# creer un depot
+#------------------------------------------------
+-> profile -> repositories -> new
+-> owner -> <nom proprietaire>
+-> repository name -> <nom repertoire>
+-> description -> <message description>
+-> add readme -> on
+-> add .gitignore -> c++
+-> add license -> mit license
+-> create repository
+#------------------------------------------------
+# copier le lien https
+#------------------------------------------------
+-> profile -> repositories -> <depot>
+-> code -> local -> clone -> https -> copier
+#------------------------------------------------

@@ -1,0 +1,17 @@
+#------------------------------------------------
+# apprendre vscode
+#------------------------------------------------
+# activer l'autocompletion des textes
+#------------------------------------------------
+.vscode/settings.json
+...
+"editor.quickSuggestions": {
+  "other": true,
+  "comments": true,
+  "strings": true
+},
+#------------------------------------------------
+# modifier l'indicateur de fin de ligne d'un fichier
+#------------------------------------------------
+-> zone barre d etat <bas> <droit> -> LF -> CRLF
+#------------------------------------------------

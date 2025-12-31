@@ -1,0 +1,17 @@
+#------------------------------------------------
+# apprendre unix
+#------------------------------------------------
+# localiser un fichier
+# saisir une partie du nom du fichier
+#------------------------------------------------
+locate "<nom fichier>"
+#------------------------------------------------
+# ajouter un texte dans un fichier
+# le texte peut être sur plusieurs lignes
+#------------------------------------------------
+cat << _EOF_ > "<nom fichier>"
+<contenu fichier>
+<contenu fichier>
+<contenu fichier>
+_EOF_
+#------------------------------------------------
