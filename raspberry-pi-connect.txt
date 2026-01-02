@@ -1,0 +1,68 @@
+#------------------------------------------------
+# apprendre raspberry-pi-connect
+#------------------------------------------------
+# creer un compte raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/sign-up
+-> email -> {youremail@domain.com}
+-> password -> {password}
+-> re-enter your password -> {password}
+-> what should we call you ? -> {username}
+-> cocher -> i agree to the terms and conditions
+-> cocher -> je suis un humain -> continue
+...
+-> aller dans votre boite de messagerie electronique -> {outlook}
+-> cliquer sur le lien de confirmation {raspberry-pi-id} -> confirm email
+#------------------------------------------------
+# se deconnecter a raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/
+-> profile -> sign out
+#------------------------------------------------
+# se connecter a raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/sign-in
+-> email -> {youremail@domain.com}
+-> password -> {password}
+-> sign in
+#------------------------------------------------
+# modifier son nom d'utilisateur sur raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/
+-> profile -> your profile -> edit profile
+-> what should we call you ? -> {username}
+-> update profile
+#------------------------------------------------
+# modifier son adresse email sur raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/
+-> profile -> your profile -> change email
+-> send verification email
+#------------------------------------------------
+# modifier son mot de passe sur raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/
+-> profile -> your profile
+-> security -> change password
+-> current password -> {old-password}
+-> password -> {new-password}
+-> re-enter your password -> {new-password}
+-> update password
+#------------------------------------------------
+# activer l'authentification 2-factor sur raspberry pi connect
+#------------------------------------------------
+-> https://id.raspberrypi.com/
+-> profile -> your profile
+-> security -> enable two-factor authentication
+-> cela genere un qrcode
+...
+-> ouvrir votre application 2-factor-authentication sur votre smartphone -> {authenticator}
+-> scanner le qrcode avec votre votre application 2-factor-authentication sur votre smartphone -> {authenticator}
+-> cela integre {raspberry-pi} a votre application 2-factor-authentication sur votre smartphone -> {authenticator}
+-> cela genere un code a 6-chiffre toutes les 30s -> {authenticator}
+...
+-> entrer le code a 6-chiffre dans le champ -> {6-digit-code}
+-> verify and set up
+-> cela genere un token -> {xxxx-xxxx-xxxx-xxxx-xxxx}
+-> enregistrer le token dans votre coffre fort -> {keepass}
+#------------------------------------------------

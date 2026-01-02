@@ -3,14 +3,7 @@
 #------------------------------------------------
 # configurer le reseau wifi a partir de la carte sd
 #------------------------------------------------
-
-# creer un fichier {ssh}
-# autoriser l'authentification au demarrage
-...
 /ssh
-...
-# creer un fichier {wpa_supplicant.conf}
-# configurer l'interface du reseau wifi
 ...
 /wpa_supplicant.conf
 ...

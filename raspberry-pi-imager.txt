@@ -1,0 +1,68 @@
+#------------------------------------------------
+# apprendre raspberry-pi-imager
+#------------------------------------------------
+# telecharger raspberry-pi-imager pour windows
+#------------------------------------------------
+-> https://www.raspberrypi.com/
+-> software
+-> download for windows
+#------------------------------------------------
+# installer raspberry-pi-imager sous windows
+#------------------------------------------------
+-> C:\Users\<username>\Downloads
+-> imager_2.0.3.exe
+-> langue -> francais -> ok
+-> suppression de l ancienne version -> oui
+-> assistant d installation -> suivant
+-> accord de licence -> cocher -> je comprends et j accepte les termes du contrat de licence -> suivant
+-> dossier de destination -> C:\Program Files\Raspberry Pi Ltd\Imager -> suivant
+-> taches supplementaires -> suivant
+-> fin de l installation -> terminer
+#------------------------------------------------
+# installer une image <raspberry-pi-os> sur une carte <micro-sd>
+# a partir d'un ordinateur windows
+#------------------------------------------------
+-> connecter votre ordinateur windows au wifi du reseau local
+-> inserer la carte {micro-sd} dans votre ordianteur windows
+-> demarrer {raspberry-pi-imager} sous windows
+...
+-> selectionner votre appareil raspberry pi -> raspberry-pi-4 -> suivant
+-> choisir un systeme d exploitation
+-> raspberry-pi-os {other} -> raspberry-pi-os lite {64-bit} -> suivant
+-> selectionner votre peripherique de stockage
+-> masse storage device usb device {119.1 Go} {monte sur E:\\} -> suivant
+-> personnalisation : choisir un nom d hote -> {pi-readydev} -> suivant
+...
+-> personnalisation : localisation
+-> ville capitale -> {paris-france}
+-> fuseau horaire -> {europe-paris}
+-> type de clavier -> {fr} -> suivant
+...
+-> personnalisation : choisir un nom d utilisateur
+-> nom d utilisateur -> {username}
+-> mot de passe -> {password}
+-> confirmer le mot de passe -> {password} -> suivant
+...
+-> personnalisation : choisir le wifi
+-> ssid -> {nom reseau wifi}
+-> mot de passe -> {mot de passe cle wifi}
+-> confirmer le mot de passe -> {mot de passe cle wifi} -> suivant
+...
+-> personnalisation : authentification ssh
+-> cocher -> activer ssh
+-> mecanisme d authentification
+-> cocher -> utiliser un mot de passe pour l authentification -> suivant
+...
+-> personnalisation : raspberry pi connect
+-> cocher -> activer raspberry pi connect
+-> cliquer sur {ouvrir raspberry pi connect} -> pour configurer votre compte
+-> cliquer sur {create auth key and launch raspberry pi imager} -> pour controler votre raspberry-pi a distance
+-> cocher {toujours autoriser connect.raspberrypi.com a ouvrir les liens de ce type dans l application associee}
+-> cliquer sur {ouvrir rpi-imager-callback-relay.exe}
+-> cela affiche le jeton enoye par le navigateur dans le champ {jeton d authentification}
+-> suivant
+...
+-> personnalisation : ecriture
+-> ecrire -> je comprends, effacer et ecrire
+-> terminer
+#------------------------------------------------

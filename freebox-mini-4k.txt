@@ -3,14 +3,7 @@
 #------------------------------------------------
 # modifier le mot de passe
 #------------------------------------------------
-# aller sur le site freebox
-# cliquer sur le lien mot de passe perdu
-...
-https://mafreebox.freebox.fr/
-...
+-> https://mafreebox.freebox.fr/
 -> menu -> connexion -> j ai perdu mon mot de passe
-...
-# autoriser l'application
-...
 -> freebox
 #------------------------------------------------
