@@ -1,0 +1,88 @@
+#------------------------------------------------
+# apprendre definitions
+#------------------------------------------------
+# Les fichiers avec l'extension (BIN)
+#------------------------------------------------
+<< _EOF_
+Le fichier (BIN) est un format de fichier binaire qui stocke les données sous forme de code binaire lisible
+par machine (0 et 1) plutôt que de texte lisible par l'homme.
+_EOF_
+#------------------------------------------------
+# Les fichiers avec l'extension (DAT)
+#------------------------------------------------
+<< _EOF_
+Un fichier (DAT), abréviation de « data file » (fichier de données), est un format de fichier générique utilisé
+pour stocker des données de manière structurée, souvent non formatée. Ces fichiers servent de conteneurs
+pour les données générées par diverses applications et peuvent contenir du texte, des images, des vidéos
+ou d'autres informations binaires.
+...
+Les fichiers DAT n'ont pas de structure standard ni de type de contenu
+spécifique ; leur format et leur finalité dépendent du logiciel qui les a créés.
+Ils sont donc flexibles, mais peuvent nécessiter le même logiciel ou des paramètres spécifiques
+pour interpréter correctement les données.
+...
+Les fichiers (DAT) stockent des informations et des données spécifiques à un programme informatique.
+Presque n'importe quel programme peut créer un fichier (DAT), mais les informations qu'il contient
+ne sont pertinentes que pour le programme qui l'a créé.
+_EOF_
+#------------------------------------------------
+# Les fichiers avec l'extension (DTB)
+#------------------------------------------------
+<< _EOF_
+Le fichier (DTB) est créé à partir des fichiers sources de l'arbre de périphériques (DTS).
+Ces derniers contiennent la description du matériel dans un format lisible.
+Le format (DTB) a pour seul but de simplifier leur chargement par le noyau.
+Ainsi, les fichiers (DTS) peuvent être convertis en (DTB) et inversement grâce à un compilateur d'arbre
+de périphériques, (DTC), disponible sur la plupart des distributions Linux.
+_EOF_
+#------------------------------------------------
+# Les fichiers avec l'extension (DTBO)
+#------------------------------------------------
+<< _EOF_
+Sous Linux, les arbres de périphériques de superposition (DTBO) sont un arbre de périphériques spécial
+utilisé pour ajouter ou modifier dynamiquement la configuration matérielle sans modifier
+l'arbre de périphériques principal (DTB).
+_EOF_
+#------------------------------------------------
+# Les fichiers avec l'extension (DTS)
+#------------------------------------------------
+<< _EOF_
+Le fichier (DTS) contient la description des composants matériels et leurs configurations.
+Il sert de point de départ à vos personnalisations. Les fichiers d'arbre de périphériques
+sont fournis par (Toradex) et sont disponibles dans le code source du noyau Linux,
+qu'il s'agisse de la branche principale ou des branches dérivées.
+_EOF_
+#------------------------------------------------
+# Les identifiants (GUID)
+#------------------------------------------------
+<< _EOF_
+Un identifiant unique global (GUID) est un identifiant de 128 bits unique au niveau mondial,
+généré par un algorithme. Il s'agit essentiellement d'une chaîne de caractères permettant de distinguer
+une entité d'une autre.
+_EOF_
+#------------------------------------------------
+# Les fichiers (IndexerVolumeGuid)
+#------------------------------------------------
+<< _EOF_
+(IndexerVolumeGuid) est un fichier utilisé par le service de recherche Windows.
+Ce fichier contient le (GUID) du volume ou de la partition courante. L'indexeur de recherche,
+au lieu de se baser uniquement sur une lettre de lecteur, utilise le (GUID) du volume pour l'indexation.
+_EOF_
+#------------------------------------------------
+# La societe (Toradex)
+#------------------------------------------------
+<< _EOF_
+La mission de (Toradex) est de fournir des produits informatiques embarqués prêts à l'emploi,
+faciles à utiliser et d'une qualité supérieure, garantissant une fiabilité à long terme.
+Grâce à l'innovation, nous proposons une intégration de pointe du matériel, des logiciels et des services
+afin de réduire la complexité, les délais de mise sur le marché, les risques et les coûts pour nos clients.
+_EOF_
+#------------------------------------------------
+# Les fichiers (WPSettings.dat)
+#------------------------------------------------
+<< _EOF_
+Le fichier (WPSettings.dat) est généralement un fichier système lié à Windows Spotlight, une fonctionnalité
+qui affiche des images d'arrière-plan sur votre appareil Windows. Désactiver la protection du système :
+cela empêche Windows de créer des points de restauration sur la clé USB.
+_EOF_
+#------------------------------------------------

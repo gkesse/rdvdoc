@@ -5,13 +5,39 @@
 #------------------------------------------------
 .vscode/settings.json
 ...
-"editor.quickSuggestions": {
-  "other": true,
-  "comments": true,
-  "strings": true
-},
+{
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+}
 #------------------------------------------------
 # modifier l'indicateur de fin de ligne d'un fichier
 #------------------------------------------------
--> zone barre d etat <bas> <droit> -> LF -> CRLF
+-> zone barre d etat {bas} {droit} -> LF -> CRLF
+#------------------------------------------------
+# transformer un texte en minuscule
+#------------------------------------------------
+-> selectionner le texte
+-> ouvrir la palette de commande
+-> transform to lowercase
+#------------------------------------------------
+# transformer un texte en majuscule
+#------------------------------------------------
+-> selectionner le texte
+-> ouvrir la palette de commande
+-> transform to uppercase
+#------------------------------------------------
+# installer l'extension {playful sparkle:replace accents}
+# pour supprimer les accents dans un texte
+#------------------------------------------------
+-> extensions -> {playful sparkle:replace accents} -> install
+-> "trust publisher & install"
+#------------------------------------------------
+# supprimer les accents dans un texte
+#------------------------------------------------
+-> selectionner le texte
+-> ouvrir la palette de commande
+-> utilities: remove diacritics {aeo - aeo}
 #------------------------------------------------

@@ -65,4 +65,24 @@
 -> personnalisation : ecriture
 -> ecrire -> je comprends, effacer et ecrire
 -> terminer
+...
+-> ejecter la carte micro-sd de votre ordianteur windows
+#------------------------------------------------
+# configurer le reseau wifi
+#------------------------------------------------
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+      dhcp6: true
+      optional: true
+  wifis:
+    wlan0:
+      dhcp4: true
+      regulatory-domain: "FR"
+      access-points:
+        "{nom-reseau-wifi}":
+          password: "{mot-de-passe-cle-wifi}"
+      optional: true
 #------------------------------------------------

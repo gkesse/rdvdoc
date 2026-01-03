@@ -1,7 +1,7 @@
 #------------------------------------------------
 # apprendre books
 #------------------------------------------------
-# 2019-Hands-On Robotics Programming with C++
+### 2019-Hands-On Robotics Programming with C++
 #------------------------------------------------
 # Le chapitre 1, « Introduction au Raspberry Pi »,
 << _EOF_
@@ -74,7 +74,7 @@ Enfin, nous aborderons la programmation de sockets et écrirons le programme Voi
 une connexion Bluetooth avec le smartphone Android afin de contrôler le robot.
 _EOF_
 #------------------------------------------------
-# 2021-Learn Robotics Programming Python
+### 2021-Learn Robotics Programming Python
 #------------------------------------------------
 # Le chapitre 1, « Introduction à la robotique »,
 << _EOF_
