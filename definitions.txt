@@ -1,14 +1,14 @@
 #------------------------------------------------
 # apprendre definitions
 #------------------------------------------------
-# Les fichiers avec l'extension (BIN)
+# Fichier avec l'extension (BIN)
 #------------------------------------------------
 << _EOF_
 Le fichier (BIN) est un format de fichier binaire qui stocke les données sous forme de code binaire lisible
 par machine (0 et 1) plutôt que de texte lisible par l'homme.
 _EOF_
 #------------------------------------------------
-# Les fichiers avec l'extension (DAT)
+# Fichier avec l'extension (DAT)
 #------------------------------------------------
 << _EOF_
 Un fichier (DAT), abréviation de « data file » (fichier de données), est un format de fichier générique utilisé
@@ -16,27 +16,27 @@ pour stocker des données de manière structurée, souvent non formatée. Ces fi
 pour les données générées par diverses applications et peuvent contenir du texte, des images, des vidéos
 ou d'autres informations binaires.
 ...
-Les fichiers DAT n'ont pas de structure standard ni de type de contenu
+Fichier DAT n'ont pas de structure standard ni de type de contenu
 spécifique ; leur format et leur finalité dépendent du logiciel qui les a créés.
 Ils sont donc flexibles, mais peuvent nécessiter le même logiciel ou des paramètres spécifiques
 pour interpréter correctement les données.
 ...
-Les fichiers (DAT) stockent des informations et des données spécifiques à un programme informatique.
+Fichier (DAT) stockent des informations et des données spécifiques à un programme informatique.
 Presque n'importe quel programme peut créer un fichier (DAT), mais les informations qu'il contient
 ne sont pertinentes que pour le programme qui l'a créé.
 _EOF_
 #------------------------------------------------
-# Les fichiers avec l'extension (DTB)
+# Fichier avec l'extension (DTB)
 #------------------------------------------------
 << _EOF_
 Le fichier (DTB) est créé à partir des fichiers sources de l'arbre de périphériques (DTS).
 Ces derniers contiennent la description du matériel dans un format lisible.
 Le format (DTB) a pour seul but de simplifier leur chargement par le noyau.
-Ainsi, les fichiers (DTS) peuvent être convertis en (DTB) et inversement grâce à un compilateur d'arbre
+Ainsi, Fichier (DTS) peuvent être convertis en (DTB) et inversement grâce à un compilateur d'arbre
 de périphériques, (DTC), disponible sur la plupart des distributions Linux.
 _EOF_
 #------------------------------------------------
-# Les fichiers avec l'extension (DTBO)
+# Fichier avec l'extension (DTBO)
 #------------------------------------------------
 << _EOF_
 Sous Linux, les arbres de périphériques de superposition (DTBO) sont un arbre de périphériques spécial
@@ -44,24 +44,72 @@ utilisé pour ajouter ou modifier dynamiquement la configuration matérielle san
 l'arbre de périphériques principal (DTB).
 _EOF_
 #------------------------------------------------
-# Les fichiers avec l'extension (DTS)
+# Fichier avec l'extension (DTS)
 #------------------------------------------------
 << _EOF_
 Le fichier (DTS) contient la description des composants matériels et leurs configurations.
-Il sert de point de départ à vos personnalisations. Les fichiers d'arbre de périphériques
+Il sert de point de départ à vos personnalisations. Fichier d'arbre de périphériques
 sont fournis par (Toradex) et sont disponibles dans le code source du noyau Linux,
 qu'il s'agisse de la branche principale ou des branches dérivées.
 _EOF_
 #------------------------------------------------
-# Les identifiants (GUID)
+# Fichier avec l'extension (ELF)
 #------------------------------------------------
 << _EOF_
-Un identifiant unique global (GUID) est un identifiant de 128 bits unique au niveau mondial,
-généré par un algorithme. Il s'agit essentiellement d'une chaîne de caractères permettant de distinguer
-une entité d'une autre.
+En informatique, le format ELF (Executable and Linkable Format, anciennement appelé Extensible Linking Format)
+est un format de fichier standard courant pour les fichiers exécutables, le code objet, les bibliothèques partagées,
+les pilotes de périphériques et les vidages de mémoire.
 _EOF_
 #------------------------------------------------
-# Les fichiers (IndexerVolumeGuid)
+# Fichier avec l'extension (IMG)
+#------------------------------------------------
+<< _EOF_
+Un fichier (IMG) est un fichier image disque, souvent utilisé pour stocker une copie exacte d'un disque
+ou d'un périphérique de stockage. Il contient une sauvegarde du système de fichiers, du système d'exploitation
+et de toutes les données.
+_EOF_
+#------------------------------------------------
+# Fichier avec l'extension (ISO)
+#------------------------------------------------
+<< _EOF_
+Les images (ISO) sont un autre type de fichiers image de disque optique, utilisant généralement l' extension (.iso),
+mais parfois aussi l'extension (.img). Elles sont similaires aux images brutes de disque optique,
+mais ne contiennent qu'une seule piste avec des données informatiques extraites d'un disque optique.
+_EOF_
+#------------------------------------------------
+# Fichier avec l'extension (TXT)
+#------------------------------------------------
+<< _EOF_
+Le format (TXT), ou format de fichier texte, est l'un des formats de texte les plus basiques
+et les plus compatibles. Composés principalement de texte brut, les fichiers (TXT) peuvent être ouverts
+sur la quasi-totalité des systèmes d'exploitation et sur une grande variété de matériels.
+_EOF_
+#------------------------------------------------
+# Fichier (bootcode.bin)
+#------------------------------------------------
+<< _EOF_
+Le code d'amorçage, également appelé chargeur d'amorçage, est un petit programme qui lance le processus
+ de démarrage d'un système informatique. Il réside dans le microprogramme ou la mémoire morte (ROM)
+ de l'ordinateur et est chargé de charger le système d'exploitation dans la mémoire vive (RAM).
+_EOF_
+#------------------------------------------------
+# Fichier (config.txt)
+#------------------------------------------------
+<< _EOF_
+Raspberry Pi OS recherche ce fichier dans la partition de démarrage, située à l'emplacement (/boot/firmware/).
+Avant Raspberry Pi OS (Bookworm), la partition de démarrage était stockée à l'emplacement (/boot/).
+Vous pouvez modifier le fichier (config.txt) directement depuis votre installation Raspberry Pi OS.
+_EOF_
+#------------------------------------------------
+# Fichier (cmdline.txt)
+#------------------------------------------------
+<< _EOF_
+Le fichier (cmdline.txt) est un fichier de configuration, situé dans la partition de démarrage de la carte SD
+sur Raspberry Pi, et utilisé pour transmettre des paramètres supplémentaires au noyau Linux pour le démarrage
+du système.
+_EOF_
+#------------------------------------------------
+# Fichier (IndexerVolumeGuid)
 #------------------------------------------------
 << _EOF_
 (IndexerVolumeGuid) est un fichier utilisé par le service de recherche Windows.
@@ -69,20 +117,112 @@ Ce fichier contient le (GUID) du volume ou de la partition courante. L'indexeur 
 au lieu de se baser uniquement sur une lettre de lecteur, utilise le (GUID) du volume pour l'indexation.
 _EOF_
 #------------------------------------------------
-# La societe (Toradex)
+# Fichier (initramfs)
+#------------------------------------------------
+<< _EOF_
+L'initramfs (système de fichiers RAM initial) sert à préparer les systèmes Linux au démarrage,
+avant le lancement du processus d'initialisation. L'initramfs se charge généralement du montage
+des systèmes de fichiers importants (en chargeant les modules et pilotes du noyau nécessaires),
+tels que (/usr) ou (/var), et de la préparation de la structure de fichiers (/dev).
+_EOF_
+#------------------------------------------------
+# Fichier (kernel{num}.img)
+#------------------------------------------------
+<< _EOF_
+L'image du noyau Linux est donc une représentation (une image de l'état) du noyau Linux capable de s'exécuter
+de manière autonome après lui avoir cédé le contrôle. De nos jours, le chargeur d'amorçage charge cette image
+depuis le système de fichiers du disque dur (un pilote est nécessaire), s'y substitue et lui cède ainsi le contrôle.
+_EOF_
+#------------------------------------------------
+# Fichier (WPSettings.dat)
+#------------------------------------------------
+<< _EOF_
+Le fichier (WPSettings.dat) est généralement un fichier système lié à Windows Spotlight, une fonctionnalité
+qui affiche des images d'arrière-plan sur votre appareil Windows. Désactiver la protection du système :
+cela empêche Windows de créer des points de restauration sur la clé USB.
+_EOF_
+#------------------------------------------------
+# Outil (Ansible)
+#------------------------------------------------
+<< _EOF_
+Ansible est un logiciel d'automatisation informatique open source en ligne de commande, écrit en Python.
+Il permet de configurer des systèmes, de déployer des logiciels et d'orchestrer des flux de travail avancés
+pour prendre en charge le déploiement d'applications, les mises à jour système, etc.
+_EOF_
+#------------------------------------------------
+# Outil (Azure DevOps)
+#------------------------------------------------
+<< _EOF_
+Azure DevOps (anciennement Visual Studio Team Services - VSTS) est un ensemble d'outils et de services qui aident
+les équipes DevOps à provisionner et à gérer des environnements de production. Il leur permet d'automatiser,
+d'orchestrer et de gérer la livraison d'applications et de services.
+_EOF_
+#------------------------------------------------
+# Outil (cloud-init)
+#------------------------------------------------
+<< _EOF_
+Cloud-init est un outil open source qui permet de personnaliser une machine virtuelle (VM) Linux
+lors du premier démarrage de cette (VM). Vous pouvez par exemple utiliser (cloud-init) pour installer des paquets,
+écrire des fichiers, ou configurer des utilisateurs du système d'exploitation ou des paramètres de sécurité.
+Comme (cloud-init) s'exécute pendant le premier démarrage de la (VM), aucune étape manuelle ou supplémentaire
+n'est ensuite requise pour appliquer la configuration.
+_EOF_
+#------------------------------------------------
+# Outil (Docker)
+#------------------------------------------------
+<< _EOF_
+Docker est un système d'exploitation pour conteneurs. De la même manière qu'une machine virtuelle virtualise
+le matériel serveur (en supprimant la nécessité de le gérer directement), les conteneurs virtualisent
+le système d'exploitation d'un serveur. Docker est installé sur chaque serveur et propose des commandes simples
+permettant de créer, démarrer ou arrêter des conteneurs.
+_EOF_
+#------------------------------------------------
+# Outil (Linger)
+#------------------------------------------------
+<< _EOF_
+Linger ne se contente pas de maintenir la session ouverte après la déconnexion. Il permet également à la session
+de démarrer automatiquement au démarrage du système, ce qui est nécessaire pour que les unités systemd de cet
+utilisateur se lancent automatiquement.
+_EOF_
+#------------------------------------------------
+# Outil (Kubernetes)
+#------------------------------------------------
+<< _EOF_
+Kubernetes (parfois abrégé en K8s, le 8 représentant le nombre de lettres entre le « K » et le « s »)
+est un système open source permettant de déployer, de mettre à l'échelle et de gérer des applications
+conteneurisées n'importe où.
+_EOF_
+#------------------------------------------------
+# Outil (Terraform)
+#------------------------------------------------
+<< _EOF_
+Terraform vous permet de décrire l'intégralité de votre infrastructure sous forme de code.
+Même si vos serveurs proviennent de différents fournisseurs tels qu'AWS ou Azure,
+Terraform vous aide à construire et à gérer ces ressources en parallèle entre les fournisseurs.
+_EOF_
+#------------------------------------------------
+# Script (cloud-config)
+#------------------------------------------------
+<< _EOF_
+Un fichier (cloud-config) est un script conçu pour être exécuté par le processus (cloud-init).
+Le format de (cloud-config) utilise une syntaxe déclarative capable de réaliser de nombreuses tâches courantes,
+tout en conservant la souplesse d'un script pour des fonctionnalités plus complexes.
+_EOF_
+#------------------------------------------------
+# Identifiant (GUID)
+#------------------------------------------------
+<< _EOF_
+Un identifiant unique global (GUID) est un identifiant de 128 bits unique au niveau mondial,
+généré par un algorithme. Il s'agit essentiellement d'une chaîne de caractères permettant de distinguer
+une entité d'une autre.
+_EOF_
+#------------------------------------------------
+# Société (Toradex)
 #------------------------------------------------
 << _EOF_
 La mission de (Toradex) est de fournir des produits informatiques embarqués prêts à l'emploi,
 faciles à utiliser et d'une qualité supérieure, garantissant une fiabilité à long terme.
 Grâce à l'innovation, nous proposons une intégration de pointe du matériel, des logiciels et des services
 afin de réduire la complexité, les délais de mise sur le marché, les risques et les coûts pour nos clients.
-_EOF_
-#------------------------------------------------
-# Les fichiers (WPSettings.dat)
-#------------------------------------------------
-<< _EOF_
-Le fichier (WPSettings.dat) est généralement un fichier système lié à Windows Spotlight, une fonctionnalité
-qui affiche des images d'arrière-plan sur votre appareil Windows. Désactiver la protection du système :
-cela empêche Windows de créer des points de restauration sur la clé USB.
 _EOF_
 #------------------------------------------------
