@@ -1,9 +1,17 @@
 #------------------------------------------------
 # apprendre git
 #------------------------------------------------
+# installer git sous debian
+#------------------------------------------------
+sudo apt install git-all
+#------------------------------------------------
 # cloner un depot
 #------------------------------------------------
-git clone <url depot>
+git clone {url-depot-https}
+#------------------------------------------------
+# cloner un depot avec un nom local
+#------------------------------------------------
+git clone {url-depot-https} {nom-depot-local}
 #------------------------------------------------
 # afficher l'etat d'un depot
 #------------------------------------------------
@@ -22,9 +30,9 @@ git add .
 #------------------------------------------------
 git add --renormalize .
 #------------------------------------------------
-# afficher une configuration <config>
+# afficher une configuration {config}
 #------------------------------------------------
-git config --get <config>
+git config --get {config}
 #------------------------------------------------
 # afficher toutes les configurations
 #------------------------------------------------
@@ -38,5 +46,5 @@ git ls-files --eol
 #------------------------------------------------
 .gitattributes
 ...
-<pattern> text eol=crlf
+{pattern} text eol=crlf
 #------------------------------------------------

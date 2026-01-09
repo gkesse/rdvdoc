@@ -1,0 +1,24 @@
+#------------------------------------------------
+# apprendre apache
+#------------------------------------------------
+# installer apache
+#------------------------------------------------
+sudo apt install apache2
+#------------------------------------------------
+# installer le module apache pour php
+#------------------------------------------------
+sudo apt install libapache2-mod-php
+#------------------------------------------------
+# recharger les configurations de apache
+#------------------------------------------------
+sudo service apache2 reload
+#------------------------------------------------
+# redemarrer apache
+#------------------------------------------------
+sudo service apache2 status
+#------------------------------------------------
+# installer une application
+# accepter l'installation de l'application
+#------------------------------------------------
+sudo apt install {app} -y
+#------------------------------------------------

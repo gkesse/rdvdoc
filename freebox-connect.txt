@@ -12,7 +12,21 @@
 # modifier le mot de passe de son reseau wifi
 #------------------------------------------------
 -> menu -> reseau -> reseau wifi -> modifier
--> reseau wifi -> "<nom reseau wifi>"
--> cle wifi -> "<mot de passe wifi>"
+-> reseau wifi -> {nom-reseau-wifi}
+-> cle wifi -> {mot-de-passe-reseau-wifi}
 -> enregistrer les modifications
+#------------------------------------------------
+# determiner l'adresse ip d'un appareil
+#------------------------------------------------
+-> menu -> appareils -> {nom-appareil} -> autres informations
+-> adresse ipv4 -> {adresse-ipv4}
+-> adresse ipv6 -> {adresse-ipv6}
+#------------------------------------------------
+#ooooo determiner l'adresse ip publique
+#------------------------------------------------
+-> ...
+#------------------------------------------------
+#ooooo determiner l'adresse ip publique
+#------------------------------------------------
+-> ...
 #------------------------------------------------

@@ -1,0 +1,25 @@
+#------------------------------------------------
+# apprendre debian
+#------------------------------------------------
+# mettre a jour le systeme
+#------------------------------------------------
+sudo apt update
+#------------------------------------------------
+# installer les mises a jour du systeme
+#------------------------------------------------
+sudo apt upgrade
+#------------------------------------------------
+# installer les mises a jour du systeme
+# accepter l'installation des mises a jour
+#------------------------------------------------
+sudo apt upgrade -y
+#------------------------------------------------
+# installer une application
+#------------------------------------------------
+sudo apt install {app}
+#------------------------------------------------
+# installer une application
+# accepter l'installation de l'application
+#------------------------------------------------
+sudo apt install {app} -y
+#------------------------------------------------

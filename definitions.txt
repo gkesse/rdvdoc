@@ -168,6 +168,14 @@ Comme (cloud-init) s'exécute pendant le premier démarrage de la (VM), aucune �
 n'est ensuite requise pour appliquer la configuration.
 _EOF_
 #------------------------------------------------
+# Outil (Git)
+#------------------------------------------------
+<< _EOF_
+Git est un système de contrôle de version distribué conçu pour suivre les modifications apportées
+au code source lors du développement logiciel. Il permet à plusieurs développeurs de travailler simultanément
+sur le même projet, en garantissant que leurs modifications ne soient pas conflictuelles.
+_EOF_
+#------------------------------------------------
 # Outil (Docker)
 #------------------------------------------------
 << _EOF_
@@ -201,6 +209,20 @@ Même si vos serveurs proviennent de différents fournisseurs tels qu'AWS ou Azu
 Terraform vous aide à construire et à gérer ces ressources en parallèle entre les fournisseurs.
 _EOF_
 #------------------------------------------------
+# Sysème d'exploitation (Debian)
+#------------------------------------------------
+<< _EOF_
+Debian est idéal pour les serveurs, le matériel ancien et les utilisateurs qui privilégient un système
+plus stable et minimaliste.
+_EOF_
+#------------------------------------------------
+# Sysème d'exploitation (Ubuntu)
+#------------------------------------------------
+<< _EOF_
+Ubuntu est mieux adapté aux ordinateurs de bureau, au matériel récent et aux utilisateurs qui souhaitent
+une expérience plus aboutie et conviviale, avec un accès aux logiciels les plus récents.
+_EOF_
+#------------------------------------------------
 # Script (cloud-config)
 #------------------------------------------------
 << _EOF_
@@ -217,6 +239,28 @@ généré par un algorithme. Il s'agit essentiellement d'une chaîne de caractè
 une entité d'une autre.
 _EOF_
 #------------------------------------------------
+# Notion (ping)
+#------------------------------------------------
+<< _EOF_
+Le ping (ou latence, terme plus précis) correspond au temps nécessaire pour qu'un petit ensemble de données
+soit transmis de votre appareil à un serveur sur Internet, puis renvoyé à votre appareil. Le temps de ping
+est mesuré en millisecondes (ms).
+_EOF_
+#------------------------------------------------
+# Notion (bail DHCP statique)
+#------------------------------------------------
+<< _EOF_
+Un bail DHCP statique est destiné lorsque vous souhaitez qu'un ordinateur utilise DHCP,
+car cela rend la vie beaucoup plus facile, tout en ayant toujours la même adresse IP. Les cas d'utilisation courants sont un serveur quelconque, des imprimantes réseau, un ordinateur auquel vous accédez à distance, etc.
+_EOF_
+#------------------------------------------------
+# notion (assurance: déclaration circonstanciée)
+#------------------------------------------------
+<< _EOF_
+La déclaration circonstanciée constitue un document précieux dans le traitement des réclamations liées
+à un sinistre. Elle offre une analyse détaillée des faits entourant un incident.
+_EOF_
+#------------------------------------------------
 # Société (Toradex)
 #------------------------------------------------
 << _EOF_
@@ -224,5 +268,32 @@ La mission de (Toradex) est de fournir des produits informatiques embarqués pr�
 faciles à utiliser et d'une qualité supérieure, garantissant une fiabilité à long terme.
 Grâce à l'innovation, nous proposons une intégration de pointe du matériel, des logiciels et des services
 afin de réduire la complexité, les délais de mise sur le marché, les risques et les coûts pour nos clients.
+_EOF_
+#------------------------------------------------
+# Composant Bluetooth (CSR)
+#------------------------------------------------
+<< _EOF_
+Clé USB Bluetooth V4.0 CSR EDR Adaptateur Récepteur sans fil Noir
+_EOF_
+#------------------------------------------------
+# Composant Souris (WR221)
+#------------------------------------------------
+<< _EOF_
+Récepteur Dell Universal Pairing - WR221
+Branchez le récepteur Dell Universal Pairing à votre PC et connectez jusqu'à six claviers et souris compatibles.
+_EOF_
+#------------------------------------------------
+# Composant WiFi (EDIMAX)
+#------------------------------------------------
+<< _EOF_
+EDIMAX Nano USB2.0 WIFI 150Mbps
+Adaptateur Nano USB - Compatibilité 802.11n WiFi - Vitesse de transfert 150Mbps
+_EOF_
+#------------------------------------------------
+# Composant WiFi (EDUP)
+#------------------------------------------------
+<< _EOF_
+EDUP 150Mbps 2.4G 802.11a/g/n Mini adaptateur WiFi USB sans fil Ethernet WiFi carte réseau récepteur Wi-fi
+pour ordinateur de bureau et portable PC
 _EOF_
 #------------------------------------------------

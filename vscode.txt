@@ -17,6 +17,12 @@
 #------------------------------------------------
 -> zone barre d etat {bas} {droit} -> LF -> CRLF
 #------------------------------------------------
+# ouvrir la palette de commande
+#------------------------------------------------
+-> cliquer dans la {barre de recherche}
+-> cliquer sur {show and run commands}
+-> {saisir votre commande}
+#------------------------------------------------
 # transformer un texte en minuscule
 #------------------------------------------------
 -> selectionner le texte
@@ -29,15 +35,60 @@
 -> ouvrir la palette de commande
 -> transform to uppercase
 #------------------------------------------------
-# installer l'extension {playful sparkle:replace accents}
+# installer l'extension {replace accents:playful sparkle}
 # pour supprimer les accents dans un texte
 #------------------------------------------------
--> extensions -> {playful sparkle:replace accents} -> install
--> "trust publisher & install"
+-> extensions -> {replace accents:playful sparkle} -> install
+-> trust publisher install
 #------------------------------------------------
 # supprimer les accents dans un texte
 #------------------------------------------------
 -> selectionner le texte
 -> ouvrir la palette de commande
 -> utilities: remove diacritics {aeo - aeo}
+#------------------------------------------------
+# installer l'extension {remote-ssh:microsoft}
+# pour se connecter a des serveurs ssh
+#------------------------------------------------
+-> extensions -> {remote-ssh:microsoft} -> install
+-> trust publisher install
+#------------------------------------------------
+# creer une connexion a un serveur ssh
+#------------------------------------------------
+-> ouvrir la palette de commande
+-> remote-ssh: connect to host
+-> add new ssh host
+-> saisir la commande {ssh username@hostname}
+-> enregistrer les parametres dans {C:\Users\username\.ssh\config}
+#------------------------------------------------
+# afficher le fichier de configuration des serveurs ssh
+#------------------------------------------------
+-> ouvrir la palette de commande
+-> remote-ssh: connect to host
+-> configure ssh hosts
+-> cliquer sur {C:\Users\username\.ssh\config}
+...
+-> acceder a la configuration ssh de base
+...
+Host {hostanme-serveur-ssh}
+  HostName {hostanme-serveur-ssh}
+  User {username-serveur-ssh}
+...
+Host {hostanme-serveur-ssh}
+  HostName {hostanme-serveur-ssh}
+  User {username-serveur-ssh}
+  Port 22
+  ForwardX11 yes
+  ForwardX11Trusted yes
+  ForwardAgent yes
+  AddKeysToAgent yes
+#------------------------------------------------
+# se connecter a un serveur ssh
+#------------------------------------------------
+-> ouvrir la palette de commande
+-> remote-ssh: connect to host
+-> cliquer sur {hostname-serveur-ssh}
+-> cliquer sur {systeme-exploitation-serveur-ssh}
+-> are you sure to continue ? -> continue
+-> password -> {password-serveur-ssh}
 #------------------------------------------------
