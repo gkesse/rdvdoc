@@ -1,9 +1,9 @@
 #------------------------------------------------
-# apprendre apache
+# apprendre ufw
 #------------------------------------------------
-# installer apache
+# installer ufw sous debian
 #------------------------------------------------
-sudo apt install apache2
+sudo apt install ufw
 #------------------------------------------------
 # installer le module apache pour php
 #------------------------------------------------

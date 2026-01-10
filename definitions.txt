@@ -1,14 +1,21 @@
 #------------------------------------------------
 # apprendre definitions
 #------------------------------------------------
-# Fichier avec l'extension (BIN)
+# notion (assurance: déclaration circonstanciée)
+#------------------------------------------------
+<< _EOF_
+La déclaration circonstanciée constitue un document précieux dans le traitement des réclamations liées
+à un sinistre. Elle offre une analyse détaillée des faits entourant un incident.
+_EOF_
+#------------------------------------------------
+# notion (extension: BIN)
 #------------------------------------------------
 << _EOF_
 Le fichier (BIN) est un format de fichier binaire qui stocke les données sous forme de code binaire lisible
 par machine (0 et 1) plutôt que de texte lisible par l'homme.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (DAT)
+# notion (extension: DAT)
 #------------------------------------------------
 << _EOF_
 Un fichier (DAT), abréviation de « data file » (fichier de données), est un format de fichier générique utilisé
@@ -26,7 +33,7 @@ Presque n'importe quel programme peut créer un fichier (DAT), mais les informat
 ne sont pertinentes que pour le programme qui l'a créé.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (DTB)
+# notion (extension: DTB)
 #------------------------------------------------
 << _EOF_
 Le fichier (DTB) est créé à partir des fichiers sources de l'arbre de périphériques (DTS).
@@ -36,7 +43,7 @@ Ainsi, Fichier (DTS) peuvent être convertis en (DTB) et inversement grâce à u
 de périphériques, (DTC), disponible sur la plupart des distributions Linux.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (DTBO)
+# notion (extension: DTBO)
 #------------------------------------------------
 << _EOF_
 Sous Linux, les arbres de périphériques de superposition (DTBO) sont un arbre de périphériques spécial
@@ -44,7 +51,7 @@ utilisé pour ajouter ou modifier dynamiquement la configuration matérielle san
 l'arbre de périphériques principal (DTB).
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (DTS)
+# notion (extension: DTS)
 #------------------------------------------------
 << _EOF_
 Le fichier (DTS) contient la description des composants matériels et leurs configurations.
@@ -53,7 +60,7 @@ sont fournis par (Toradex) et sont disponibles dans le code source du noyau Linu
 qu'il s'agisse de la branche principale ou des branches dérivées.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (ELF)
+# notion (extension: ELF)
 #------------------------------------------------
 << _EOF_
 En informatique, le format ELF (Executable and Linkable Format, anciennement appelé Extensible Linking Format)
@@ -61,7 +68,7 @@ est un format de fichier standard courant pour les fichiers exécutables, le cod
 les pilotes de périphériques et les vidages de mémoire.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (IMG)
+# notion (extension: IMG)
 #------------------------------------------------
 << _EOF_
 Un fichier (IMG) est un fichier image disque, souvent utilisé pour stocker une copie exacte d'un disque
@@ -69,7 +76,7 @@ ou d'un périphérique de stockage. Il contient une sauvegarde du système de fi
 et de toutes les données.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (ISO)
+# notion (extension: ISO)
 #------------------------------------------------
 << _EOF_
 Les images (ISO) sont un autre type de fichiers image de disque optique, utilisant généralement l' extension (.iso),
@@ -77,7 +84,7 @@ mais parfois aussi l'extension (.img). Elles sont similaires aux images brutes d
 mais ne contiennent qu'une seule piste avec des données informatiques extraites d'un disque optique.
 _EOF_
 #------------------------------------------------
-# Fichier avec l'extension (TXT)
+# notion (extension: TXT)
 #------------------------------------------------
 << _EOF_
 Le format (TXT), ou format de fichier texte, est l'un des formats de texte les plus basiques
@@ -85,7 +92,7 @@ et les plus compatibles. Composés principalement de texte brut, les fichiers (T
 sur la quasi-totalité des systèmes d'exploitation et sur une grande variété de matériels.
 _EOF_
 #------------------------------------------------
-# Fichier (bootcode.bin)
+# notion (fichier: bootcode.bin)
 #------------------------------------------------
 << _EOF_
 Le code d'amorçage, également appelé chargeur d'amorçage, est un petit programme qui lance le processus
@@ -93,23 +100,7 @@ Le code d'amorçage, également appelé chargeur d'amorçage, est un petit progr
  de l'ordinateur et est chargé de charger le système d'exploitation dans la mémoire vive (RAM).
 _EOF_
 #------------------------------------------------
-# Fichier (config.txt)
-#------------------------------------------------
-<< _EOF_
-Raspberry Pi OS recherche ce fichier dans la partition de démarrage, située à l'emplacement (/boot/firmware/).
-Avant Raspberry Pi OS (Bookworm), la partition de démarrage était stockée à l'emplacement (/boot/).
-Vous pouvez modifier le fichier (config.txt) directement depuis votre installation Raspberry Pi OS.
-_EOF_
-#------------------------------------------------
-# Fichier (cmdline.txt)
-#------------------------------------------------
-<< _EOF_
-Le fichier (cmdline.txt) est un fichier de configuration, situé dans la partition de démarrage de la carte SD
-sur Raspberry Pi, et utilisé pour transmettre des paramètres supplémentaires au noyau Linux pour le démarrage
-du système.
-_EOF_
-#------------------------------------------------
-# Fichier (IndexerVolumeGuid)
+# notion (fichier: IndexerVolumeGuid)
 #------------------------------------------------
 << _EOF_
 (IndexerVolumeGuid) est un fichier utilisé par le service de recherche Windows.
@@ -117,7 +108,7 @@ Ce fichier contient le (GUID) du volume ou de la partition courante. L'indexeur 
 au lieu de se baser uniquement sur une lettre de lecteur, utilise le (GUID) du volume pour l'indexation.
 _EOF_
 #------------------------------------------------
-# Fichier (initramfs)
+# notion (fichier: initramfs)
 #------------------------------------------------
 << _EOF_
 L'initramfs (système de fichiers RAM initial) sert à préparer les systèmes Linux au démarrage,
@@ -126,7 +117,7 @@ des systèmes de fichiers importants (en chargeant les modules et pilotes du noy
 tels que (/usr) ou (/var), et de la préparation de la structure de fichiers (/dev).
 _EOF_
 #------------------------------------------------
-# Fichier (kernel{num}.img)
+# notion (fichier: kernel.img)
 #------------------------------------------------
 << _EOF_
 L'image du noyau Linux est donc une représentation (une image de l'état) du noyau Linux capable de s'exécuter
@@ -134,7 +125,7 @@ de manière autonome après lui avoir cédé le contrôle. De nos jours, le char
 depuis le système de fichiers du disque dur (un pilote est nécessaire), s'y substitue et lui cède ainsi le contrôle.
 _EOF_
 #------------------------------------------------
-# Fichier (WPSettings.dat)
+# notion (fichier: WPSettings.dat)
 #------------------------------------------------
 << _EOF_
 Le fichier (WPSettings.dat) est généralement un fichier système lié à Windows Spotlight, une fonctionnalité
@@ -142,7 +133,31 @@ qui affiche des images d'arrière-plan sur votre appareil Windows. Désactiver l
 cela empêche Windows de créer des points de restauration sur la clé USB.
 _EOF_
 #------------------------------------------------
-# Outil (Ansible)
+# notion (id: GUID)
+#------------------------------------------------
+<< _EOF_
+Un identifiant unique global (GUID) est un identifiant de 128 bits unique au niveau mondial,
+généré par un algorithme. Il s'agit essentiellement d'une chaîne de caractères permettant de distinguer
+une entité d'une autre.
+_EOF_
+#------------------------------------------------
+# notion (rpi: config.txt)
+#------------------------------------------------
+<< _EOF_
+Raspberry Pi OS recherche ce fichier dans la partition de démarrage, située à l'emplacement (/boot/firmware/).
+Avant Raspberry Pi OS (Bookworm), la partition de démarrage était stockée à l'emplacement (/boot/).
+Vous pouvez modifier le fichier (config.txt) directement depuis votre installation Raspberry Pi OS.
+_EOF_
+#------------------------------------------------
+# notion (rpi: cmdline.txt)
+#------------------------------------------------
+<< _EOF_
+Le fichier (cmdline.txt) est un fichier de configuration, situé dans la partition de démarrage de la carte SD
+sur Raspberry Pi, et utilisé pour transmettre des paramètres supplémentaires au noyau Linux pour le démarrage
+du système.
+_EOF_
+#------------------------------------------------
+# notion (outil: Ansible)
 #------------------------------------------------
 << _EOF_
 Ansible est un logiciel d'automatisation informatique open source en ligne de commande, écrit en Python.
@@ -150,7 +165,7 @@ Il permet de configurer des systèmes, de déployer des logiciels et d'orchestre
 pour prendre en charge le déploiement d'applications, les mises à jour système, etc.
 _EOF_
 #------------------------------------------------
-# Outil (Azure DevOps)
+# notion (outil: Azure DevOps)
 #------------------------------------------------
 << _EOF_
 Azure DevOps (anciennement Visual Studio Team Services - VSTS) est un ensemble d'outils et de services qui aident
@@ -158,7 +173,7 @@ les équipes DevOps à provisionner et à gérer des environnements de productio
 d'orchestrer et de gérer la livraison d'applications et de services.
 _EOF_
 #------------------------------------------------
-# Outil (cloud-init)
+# notion (outil: cloud-init)
 #------------------------------------------------
 << _EOF_
 Cloud-init est un outil open source qui permet de personnaliser une machine virtuelle (VM) Linux
@@ -168,15 +183,7 @@ Comme (cloud-init) s'exécute pendant le premier démarrage de la (VM), aucune �
 n'est ensuite requise pour appliquer la configuration.
 _EOF_
 #------------------------------------------------
-# Outil (Git)
-#------------------------------------------------
-<< _EOF_
-Git est un système de contrôle de version distribué conçu pour suivre les modifications apportées
-au code source lors du développement logiciel. Il permet à plusieurs développeurs de travailler simultanément
-sur le même projet, en garantissant que leurs modifications ne soient pas conflictuelles.
-_EOF_
-#------------------------------------------------
-# Outil (Docker)
+# notion (outil: Docker)
 #------------------------------------------------
 << _EOF_
 Docker est un système d'exploitation pour conteneurs. De la même manière qu'une machine virtuelle virtualise
@@ -185,7 +192,15 @@ le système d'exploitation d'un serveur. Docker est installé sur chaque serveur
 permettant de créer, démarrer ou arrêter des conteneurs.
 _EOF_
 #------------------------------------------------
-# Outil (Linger)
+# notion (outil: Git)
+#------------------------------------------------
+<< _EOF_
+Git est un système de contrôle de version distribué conçu pour suivre les modifications apportées
+au code source lors du développement logiciel. Il permet à plusieurs développeurs de travailler simultanément
+sur le même projet, en garantissant que leurs modifications ne soient pas conflictuelles.
+_EOF_
+#------------------------------------------------
+# notion (outil: Linger)
 #------------------------------------------------
 << _EOF_
 Linger ne se contente pas de maintenir la session ouverte après la déconnexion. Il permet également à la session
@@ -193,7 +208,7 @@ de démarrer automatiquement au démarrage du système, ce qui est nécessaire p
 utilisateur se lancent automatiquement.
 _EOF_
 #------------------------------------------------
-# Outil (Kubernetes)
+# notion (outil: Kubernetes)
 #------------------------------------------------
 << _EOF_
 Kubernetes (parfois abrégé en K8s, le 8 représentant le nombre de lettres entre le « K » et le « s »)
@@ -201,7 +216,7 @@ est un système open source permettant de déployer, de mettre à l'échelle et 
 conteneurisées n'importe où.
 _EOF_
 #------------------------------------------------
-# Outil (Terraform)
+# notion (outil: Terraform)
 #------------------------------------------------
 << _EOF_
 Terraform vous permet de décrire l'intégralité de votre infrastructure sous forme de code.
@@ -209,37 +224,36 @@ Même si vos serveurs proviennent de différents fournisseurs tels qu'AWS ou Azu
 Terraform vous aide à construire et à gérer ces ressources en parallèle entre les fournisseurs.
 _EOF_
 #------------------------------------------------
-# Sysème d'exploitation (Debian)
+# notion (outil: UFW)
+#------------------------------------------------
+<< _EOF_
+Uncomplicated Firewall (UFW) est un programme de gestion de pare-feu Netfilter conçu pour être facile à utiliser.
+Il utilise une interface en ligne de commande composée d'un petit nombre de commandes simples et utilise iptables
+pour la configuration.
+_EOF_
+#------------------------------------------------
+# notion (os: Debian)
 #------------------------------------------------
 << _EOF_
 Debian est idéal pour les serveurs, le matériel ancien et les utilisateurs qui privilégient un système
 plus stable et minimaliste.
 _EOF_
 #------------------------------------------------
-# Sysème d'exploitation (Ubuntu)
+#  notion (os: Ubuntu)
 #------------------------------------------------
 << _EOF_
 Ubuntu est mieux adapté aux ordinateurs de bureau, au matériel récent et aux utilisateurs qui souhaitent
 une expérience plus aboutie et conviviale, avec un accès aux logiciels les plus récents.
 _EOF_
 #------------------------------------------------
-# Script (cloud-config)
+# notion (reseau: bail DHCP statique)
 #------------------------------------------------
 << _EOF_
-Un fichier (cloud-config) est un script conçu pour être exécuté par le processus (cloud-init).
-Le format de (cloud-config) utilise une syntaxe déclarative capable de réaliser de nombreuses tâches courantes,
-tout en conservant la souplesse d'un script pour des fonctionnalités plus complexes.
+Un bail DHCP statique est destiné lorsque vous souhaitez qu'un ordinateur utilise DHCP,
+car cela rend la vie beaucoup plus facile, tout en ayant toujours la même adresse IP. Les cas d'utilisation courants sont un serveur quelconque, des imprimantes réseau, un ordinateur auquel vous accédez à distance, etc.
 _EOF_
 #------------------------------------------------
-# Identifiant (GUID)
-#------------------------------------------------
-<< _EOF_
-Un identifiant unique global (GUID) est un identifiant de 128 bits unique au niveau mondial,
-généré par un algorithme. Il s'agit essentiellement d'une chaîne de caractères permettant de distinguer
-une entité d'une autre.
-_EOF_
-#------------------------------------------------
-# Notion (ping)
+# notion (reseau: ping)
 #------------------------------------------------
 << _EOF_
 Le ping (ou latence, terme plus précis) correspond au temps nécessaire pour qu'un petit ensemble de données
@@ -247,21 +261,32 @@ soit transmis de votre appareil à un serveur sur Internet, puis renvoyé à vot
 est mesuré en millisecondes (ms).
 _EOF_
 #------------------------------------------------
-# Notion (bail DHCP statique)
+# notion (reseau: Wake-on-LAN)
 #------------------------------------------------
 << _EOF_
-Un bail DHCP statique est destiné lorsque vous souhaitez qu'un ordinateur utilise DHCP,
-car cela rend la vie beaucoup plus facile, tout en ayant toujours la même adresse IP. Les cas d'utilisation courants sont un serveur quelconque, des imprimantes réseau, un ordinateur auquel vous accédez à distance, etc.
+Wake-on-LAN (WoL) est une norme réseau qui permet de sortir un ordinateur de veille ou de l'arrêt complet
+grâce à un message réseau . Ce message, souvent appelé « paquet magique », est envoyé depuis un périphérique
+compatible WoL vers l'ordinateur cible via le réseau.
 _EOF_
 #------------------------------------------------
-# notion (assurance: déclaration circonstanciée)
+# notion (script: cloud-config)
 #------------------------------------------------
 << _EOF_
-La déclaration circonstanciée constitue un document précieux dans le traitement des réclamations liées
-à un sinistre. Elle offre une analyse détaillée des faits entourant un incident.
+Un fichier (cloud-config) est un script conçu pour être exécuté par le processus (cloud-init).
+Le format de (cloud-config) utilise une syntaxe déclarative capable de réaliser de nombreuses tâches courantes,
+tout en conservant la souplesse d'un script pour des fonctionnalités plus complexes.
 _EOF_
 #------------------------------------------------
-# Société (Toradex)
+# notion (securite: pare-feu)
+#------------------------------------------------
+<< _EOF_
+Un pare-feu est un dispositif de sécurité réseau conçu pour surveiller, filtrer et contrôler le trafic réseau
+entrant et sortant en fonction de règles de sécurité prédéterminées.
+L'objectif principal d'un pare-feu est d'établir une barrière entre un réseau interne de confiance
+et des réseaux externes non fiables.
+_EOF_
+#------------------------------------------------
+# notion (societe: Toradex)
 #------------------------------------------------
 << _EOF_
 La mission de (Toradex) est de fournir des produits informatiques embarqués prêts à l'emploi,
@@ -270,27 +295,27 @@ Grâce à l'innovation, nous proposons une intégration de pointe du matériel, 
 afin de réduire la complexité, les délais de mise sur le marché, les risques et les coûts pour nos clients.
 _EOF_
 #------------------------------------------------
-# Composant Bluetooth (CSR)
+# composant (bluetooth: CSR)
 #------------------------------------------------
 << _EOF_
 Clé USB Bluetooth V4.0 CSR EDR Adaptateur Récepteur sans fil Noir
 _EOF_
 #------------------------------------------------
-# Composant Souris (WR221)
+# composant (souris: WR221)
 #------------------------------------------------
 << _EOF_
 Récepteur Dell Universal Pairing - WR221
 Branchez le récepteur Dell Universal Pairing à votre PC et connectez jusqu'à six claviers et souris compatibles.
 _EOF_
 #------------------------------------------------
-# Composant WiFi (EDIMAX)
+# composant (wifi: EDIMAX)
 #------------------------------------------------
 << _EOF_
 EDIMAX Nano USB2.0 WIFI 150Mbps
 Adaptateur Nano USB - Compatibilité 802.11n WiFi - Vitesse de transfert 150Mbps
 _EOF_
 #------------------------------------------------
-# Composant WiFi (EDUP)
+# composant (wifi: EDUP)
 #------------------------------------------------
 << _EOF_
 EDUP 150Mbps 2.4G 802.11a/g/n Mini adaptateur WiFi USB sans fil Ethernet WiFi carte réseau récepteur Wi-fi

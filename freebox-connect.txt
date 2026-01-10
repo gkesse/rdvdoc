@@ -8,13 +8,25 @@
 -> lancer la recherche du freebox-mini-4k
 -> la connexion est automatique
 #------------------------------------------------
-# modifier le nom de son reseau wifi
-# modifier le mot de passe de son reseau wifi
+# partager une connexion wifi par cle wifi
 #------------------------------------------------
--> menu -> reseau -> reseau wifi -> modifier
--> reseau wifi -> {nom-reseau-wifi}
--> cle wifi -> {mot-de-passe-reseau-wifi}
--> enregistrer les modifications
+-> menu -> accueil -> partager mon wifi
+-> partager -> {app} -> {compte} -> envoyer
+#------------------------------------------------
+# partager une connexion wifi par qrcode
+#------------------------------------------------
+-> menu -> accueil -> partager mon wifi
+-> afficher le qrcode -> {scanner le qrcode} -> pour se connecter
+#------------------------------------------------
+# determiner l adresse ip publique
+#------------------------------------------------
+-> menu -> accueil -> freebox server
+-> autres informations
+-> adresse ipv4 -> {82.65.XXX.YYY}
+#------------------------------------------------
+# determiner les appareils connectes a un reseau wifi
+#------------------------------------------------
+-> menu -> appareils
 #------------------------------------------------
 # determiner l'adresse ip d'un appareil
 #------------------------------------------------
@@ -22,11 +34,68 @@
 -> adresse ipv4 -> {adresse-ipv4}
 -> adresse ipv6 -> {adresse-ipv6}
 #------------------------------------------------
-#ooooo determiner l'adresse ip publique
+# modifier le nom d'un reseau wifi
 #------------------------------------------------
--> ...
+-> menu -> reseau -> reseau wifi -> modifier
+-> reseau wifi -> {nom-reseau-wifi} -> valider
+-> enregistrer les modifications
 #------------------------------------------------
-#ooooo determiner l'adresse ip publique
+# modifier le mot de passe d'un reseau wifi
 #------------------------------------------------
--> ...
+-> menu -> reseau -> reseau wifi -> modifier
+-> cle wifi -> {mot-de-passe-reseau-wifi} -> valider
+-> enregistrer les modifications
+#------------------------------------------------
+# rediriger un port
+#------------------------------------------------
+-> menu -> reseau -> {...} -> parametres reseau avances
+-> redirection de port -> ajouter une redirection
+-> selectionner dans la liste d appareils -> {device}
+...
+-> adresse ip
+-> ip source -> toutes
+-> ip destination -> {device}
+...
+-> ports
+-> port source -> {XXXX}
+-> port de destination -> {XXXX}
+...
+-> parametres
+-> protocole -> tcp
+-> description {optionnel} -> {description}
+...
+-> ajouter cette redirection
+#------------------------------------------------
+# determiner la plage des adresses dhcp
+#------------------------------------------------
+-> menu -> reseau -> {...} -> parametres reseau avances
+-> dhcp -> plage ip
+-> debut de la page d adresses -> {192.168.XXX.XXX}
+-> debut de la page d adresses -> {192.168.YYY.YYY}
+-> valider
+#------------------------------------------------
+# creer un bail statique
+#------------------------------------------------
+-> menu -> reseau -> {...} -> parametres reseau avances
+-> dhcp -> ajouter un bail statique
+-> selectionner dans la liste d appareils -> {device}
+-> adresse ip -> {192.168.XXX.XXX}
+#------------------------------------------------
+# determiner l'adresse du serveur dns
+#------------------------------------------------
+-> menu -> reseau -> {...} -> parametres reseau avances
+-> dhcp -> serveur dns 1 -> {192.168.XXX.XXX}
+#------------------------------------------------
+# modifier le nom de la freebox
+#------------------------------------------------
+-> menu -> plus -> ma freebox -> {freebox} -> changer
+-> {freebox} -> parametres -> personnalisation
+-> {freebox} -> {nouveau-nom-freebox}
+-> enregistrer les modifications
+#------------------------------------------------
+# activer les notifications
+# lors de la connexion d'un nouvel appareil
+#------------------------------------------------
+-> menu -> plus -> reglages -> notifications
+-> nouvel appareil connecte -> activer
 #------------------------------------------------

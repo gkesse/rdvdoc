@@ -92,3 +92,12 @@ Host {hostanme-serveur-ssh}
 -> are you sure to continue ? -> continue
 -> password -> {password-serveur-ssh}
 #------------------------------------------------
+#ooooo installer l'extension {save as root in remote ssh:yy0931}
+#------------------------------------------------
+-> ouvrir la palette de commande
+-> remote-ssh: connect to host
+-> cliquer sur {hostname-serveur-ssh}
+-> cliquer sur {systeme-exploitation-serveur-ssh}
+-> are you sure to continue ? -> continue
+-> password -> {password-serveur-ssh}
+#------------------------------------------------
