@@ -1,0 +1,136 @@
+#------------------------------------------------
+# apprendre certbot
+#------------------------------------------------
+# installer certbot sous apt
+#------------------------------------------------
+sudo apt install certbot
+#------------------------------------------------
+# installer certbot sous snap
+#------------------------------------------------
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+#------------------------------------------------
+# installer un client certbot
+#------------------------------------------------
+sudo apt install python3-certbot-apache
+#------------------------------------------------
+# generer un certificat ssl auto-signe pour apache
+# configurer automatiquement le certificat ssl
+#------------------------------------------------
+sudo service apache2 stop
+...
+sudo certbot --apache
+...
+-> email : {email}
+-> agree : yes
+-> campaign : yes
+-> all : vide
+...
+<VirtualHost *:80>
+    ServerAdmin {email}
+    ServerName {sitename}.ovh
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+
+    RewriteEngine on
+    RewriteCond %{SERVER_NAME} =www.{sitename}.ovh [OR]
+    RewriteCond %{SERVER_NAME} ={sitename}.ovh
+    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+...
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerAdmin {email}
+    ServerName {sitename}.ovh
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+
+    Include /etc/letsencrypt/options-ssl-apache.conf
+    SSLCertificateFile /etc/letsencrypt/live/{sitename}.ovh/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/{sitename}.ovh/privkey.pem
+</VirtualHost>
+</IfModule>
+...
+sudo service apache2 reload
+sudo service apache2 restart
+#------------------------------------------------
+# generer un certificat ssl auto-signe pour apache
+# configurer manuellement le certificat ssl
+#------------------------------------------------
+sudo certbot certonly --apache
+...
+-> email : {email}
+-> agree : yes
+-> campaign : yes
+-> all : vide
+...
+<VirtualHost *:80>
+    ServerAdmin {email}
+    ServerName {sitename}.ovh
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+
+    RewriteEngine on
+    RewriteCond %{SERVER_NAME} =www.{sitename}.ovh [OR]
+    RewriteCond %{SERVER_NAME} ={sitename}.ovh
+    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+...
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerAdmin {email}
+    ServerName {sitename}.ovh
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+
+    Include /etc/letsencrypt/options-ssl-apache.conf
+    SSLCertificateFile /etc/letsencrypt/live/{sitename}.ovh/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/{sitename}.ovh/privkey.pem
+</VirtualHost>
+</IfModule>
+...
+sudo service apache2 reload
+sudo service apache2 restart
+#------------------------------------------------

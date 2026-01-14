@@ -1,0 +1,142 @@
+#------------------------------------------------
+# apprendre rdvdev
+#------------------------------------------------
+# installer les dependances
+#------------------------------------------------
+sudo apt install sqlite3
+...
+sudo apt install apache2
+sudo apt install php
+sudo apt install php-dom
+sudo apt install php-sqlite3
+sudo apt install php-mbstring
+sudo apt install php-intl
+sudo apt install php-sockets
+sudo apt install tree
+...
+sudo apt install certbot
+sudo apt install python3-certbot-apache
+#------------------------------------------------
+# installer certbot sous snap
+#------------------------------------------------
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+#------------------------------------------------
+# configurer la base de donnees sqlite
+#------------------------------------------------
+echo "" > /home/{username}/rdvrepo/{sitename}/data/sqlite/database.dat
+...
+sudo chmod 777 /home/{username}/rdvrepo/{sitename}/data/sqlite/database.dat
+...
+sqlite3 /home/{username}/rdvrepo/{sitename}/data/sqlite/database.dat << _EOF_
+create table if not exists _views (
+    _id integer primary key autoincrement
+    , _url varchar(255) not null
+    , _view integer not null default 100
+    , _create_date datetime default current_timestamp
+    , _upadte_date datetime
+    , unique(_url)
+);
+_EOF_
+#------------------------------------------------
+# configurer un repertoire personnel
+#------------------------------------------------
+git checkout 2.0
+...
+sudo a2enmod rewrite
+sudo a2enmod ssl
+sudo a2enmod headers
+...
+php --version
+...
+sudo chmod 755 /home/{username}
+sudo chmod 755 /home/{username}/rdvrepo
+sudo chmod -R 755 /home/{username}/rdvrepo/{sitename}
+...
+sudo ln -s /home/{username}/rdvrepo/{sitename} /var/www/{sitename}
+...
+sudo service apache2 reload
+sudo service apache2 restart
+...
+-> /etc/apache2/sites-available/000-default.conf
+...
+<VirtualHost *:80>
+    ServerAdmin {email}
+    ServerName {sitename}.com
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+</VirtualHost>
+...
+-> /home/{username}/rdvrepo/{sitename}/logs/error.log
+-> /home/{username}/rdvrepo/{sitename}/logs/access.log
+#------------------------------------------------
+# generer un certificat ssl auto-signe pour apache
+#------------------------------------------------
+sudo service apache2 stop
+...
+sudo certbot --apache
+...
+-> email : {email}
+-> agree : yes
+-> campaign : yes
+-> all : vide
+...
+<VirtualHost *:80>
+    ServerAdmin {email}
+    ServerName {sitename}.ovh
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+
+    RewriteEngine on
+    RewriteCond %{SERVER_NAME} =www.{sitename}.ovh [OR]
+    RewriteCond %{SERVER_NAME} ={sitename}.ovh
+    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+...
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerAdmin {email}
+    ServerName {sitename}.ovh
+    ServerAlias www.{sitename}.ovh
+	DocumentRoot /var/www/{sitename}
+	ErrorLog /var/www/{sitename}/logs/error.log
+	CustomLog /var/www/{sitename}/logs/access.log combined
+
+    <Directory /var/www/{sitename} >
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted
+    </Directory>
+
+    Include /etc/letsencrypt/options-ssl-apache.conf
+    SSLCertificateFile /etc/letsencrypt/live/{sitename}.ovh/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/{sitename}.ovh/privkey.pem
+</VirtualHost>
+</IfModule>
+...
+sudo service apache2 reload
+sudo service apache2 restart
+#------------------------------------------------

@@ -322,3 +322,28 @@ EDUP 150Mbps 2.4G 802.11a/g/n Mini adaptateur WiFi USB sans fil Ethernet WiFi ca
 pour ordinateur de bureau et portable PC
 _EOF_
 #------------------------------------------------
+# notion (chmod)
+#------------------------------------------------
+<< _EOF_
+La commande chmod, ou changement de mode, permet à un administrateur de définir ou de modifier les permissions
+d'un fichier. Chaque fichier UNIX/Linux possède un utilisateur propriétaire et un groupe propriétaire.
+Chaque fichier y est rattaché et possède des permissions qui lui sont associées : lecture, écriture ou exécution.
+_EOF_
+#------------------------------------------------
+# notion (chown)
+#------------------------------------------------
+<< _EOF_
+La commande chown (abréviation de « change owner ») est un utilitaire en ligne de commande Unix permettant
+de modifier le propriétaire des fichiers et des répertoires . Elle permet de spécifier un nouveau propriétaire
+et un nouveau groupe pour un fichier ou un répertoire, contrôlant ainsi qui est autorisé à y accéder
+et à le modifier.
+_EOF_
+#------------------------------------------------
+# notion (service)
+#------------------------------------------------
+<< _EOF_
+Un service (également appelé processus démon) est un logiciel qui s'exécute sur un ordinateur, généralement
+en arrière-plan. En effet, l'administrateur n'interagit généralement pas directement avec lui.
+Par exemple, un service réseau s'exécute au niveau de la couche application pour fournir un service sur un réseau.
+_EOF_
+#------------------------------------------------

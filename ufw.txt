@@ -5,25 +5,66 @@
 #------------------------------------------------
 sudo apt install ufw
 #------------------------------------------------
-# installer le module apache pour php
+# activer le parefeu
 #------------------------------------------------
-sudo apt install libapache2-mod-php
+sudo ufw enable
 #------------------------------------------------
-# recharger les configurations de apache
+# desactiver le parefeu
 #------------------------------------------------
-sudo service apache2 reload
+sudo ufw disable
 #------------------------------------------------
-# redemarrer apache
+# afficher l'etat du parefeu
 #------------------------------------------------
-sudo service apache2 status
+sudo ufw status
 #------------------------------------------------
-# installer une application
-# accepter l'installation de l'application
+# autoriser le trafic sur un port
+# a partir d'une adresse ip
 #------------------------------------------------
-sudo apt install {app} -y
+sudo ufw allow from {192.168.1.125} to any port {80}
 #------------------------------------------------
-# ajouter l'utilisateur apache au groupe personnel
+# autoriser le trafic sur un reseau
 #------------------------------------------------
-sudo adduser www-data $(whoami)
-sudo service apache2 reload
+sudo ufw allow from {192.168.1.0/24}
+#------------------------------------------------
+# autoriser le trafic a partir d'une adresse ip
+#------------------------------------------------
+sudo ufw allow from {192.168.1.125}
+#------------------------------------------------
+# autoriser le trafic pour un service
+#------------------------------------------------
+sudo ufw allow {service}
+#------------------------------------------------
+# autoriser le trafic sur un port
+#------------------------------------------------
+sudo ufw allow {80}
+#------------------------------------------------
+# autoriser le trafic sur un port
+# indiquer le protocole concerne
+#------------------------------------------------
+sudo ufw allow {80}/{tcp}
+#------------------------------------------------
+# refuser le trafic sur un port
+# indiquer le protocole concerne
+#------------------------------------------------
+sudo ufw deny {80}/{tcp}
+#------------------------------------------------
+# supprimer une regle d'autorisation
+#------------------------------------------------
+sudo ufw delete allow {rule}
+#------------------------------------------------
+# supprimer une regle de refus
+#------------------------------------------------
+sudo ufw delete deny {rule}
+#------------------------------------------------
+# supprimer une regle par numero
+#------------------------------------------------
+sudo ufw delete {num}
+#------------------------------------------------
+# afficher la liste des regles par numero
+#------------------------------------------------
+sudo ufw status numbered
+#------------------------------------------------
+# reinitialiser le parefeu a l'etat par defaut
+#------------------------------------------------
+sudo ufw reset
 #------------------------------------------------
