@@ -1,5 +1,5 @@
 #------------------------------------------------
-# apprendre carte-familles-nombreuses
+# references carte-familles-nombreuses
 #------------------------------------------------
 # commander une carte-familles-nombreuses
 #------------------------------------------------

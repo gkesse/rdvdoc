@@ -1,9 +1,13 @@
 #------------------------------------------------
-# references ubuntu-desktop
+# references c++
 #------------------------------------------------
-# configurer le reseau wifi
+# creer un programme de base
 #------------------------------------------------
--> cliquer sur l icone wifi
--> available networks -> "{nom reseau wifi}"
--> "{mot de passe cle wifi}"
+#include <iostream>
+
+int main(int _argc, char **_argv)
+{
+    std::cout << "Demarrage de l'application\n";
+    return 0;
+}
 #------------------------------------------------

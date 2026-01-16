@@ -1,5 +1,5 @@
 #------------------------------------------------
-# apprendre canon-tr4550
+# references canon-tr4550
 #------------------------------------------------
 # configurer le wifi
 # appuyer sur le bouton {*} pour changer le mode du clavier

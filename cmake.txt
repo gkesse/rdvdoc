@@ -1,0 +1,16 @@
+#------------------------------------------------
+# references cmake
+#------------------------------------------------
+# creer un programme de base
+#------------------------------------------------
+cmake_minimum_required(VERSION 3.10.0)
+project(rdv-qt-schematic VERSION 0.1.0 LANGUAGES C CXX)
+
+set(SRC_FILES
+    main.cpp
+)
+
+add_executable(${PROJECT_NAME}
+    ${SRC_FILES}
+)
+#------------------------------------------------

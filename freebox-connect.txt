@@ -1,5 +1,5 @@
 #------------------------------------------------
-# apprendre freebox-connect
+# references freebox-connect
 #------------------------------------------------
 # se connecter a un freebox-mini-4k
 #------------------------------------------------

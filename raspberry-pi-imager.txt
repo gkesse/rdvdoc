@@ -1,5 +1,5 @@
 #------------------------------------------------
-# apprendre raspberry-pi-imager
+# references raspberry-pi-imager
 #------------------------------------------------
 # telecharger raspberry-pi-imager pour windows
 #------------------------------------------------

@@ -1,5 +1,5 @@
 #------------------------------------------------
-# apprendre raspberry-pi-connect
+# references raspberry-pi-connect
 #------------------------------------------------
 # creer un compte raspberry pi connect
 #------------------------------------------------
