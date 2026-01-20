@@ -1,6 +1,11 @@
 #------------------------------------------------
 # references vscode
 #------------------------------------------------
+# ouvrir le fichier de configuration {settings.json}
+#------------------------------------------------
+-> ouvrir la palette de commande -> {show and run commands}
+-> {preferences: open workspace settings json}
+#------------------------------------------------
 # activer l'autocompletion des textes
 #------------------------------------------------
 -> .vscode/settings.json
