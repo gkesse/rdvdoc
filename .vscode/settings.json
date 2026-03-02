@@ -1,8 +1,12 @@
 {
-    "editor.acceptSuggestionOnEnter": "on",
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "on",
         "strings": "on"
     },
+    "editor.wordBasedSuggestions": "allDocuments",
+    "cmake.sourceDirectory": "C:/rdvrepo/rdvdoc/code/src/001-qt-search-widget",
+    "cmake.environment": {
+        "PATH": "C:/tools/Qt/6.10.0/msvc2022_64/bin"
+    }
 }

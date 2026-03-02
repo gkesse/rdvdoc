@@ -11,11 +11,12 @@
 -> .vscode/settings.json
 ...
 {
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": true,
-    "strings": true
-  },
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.wordBasedSuggestions": "allDocuments"
 }
 #------------------------------------------------
 # modifier l'indicateur de fin de ligne d'un fichier
@@ -126,9 +127,9 @@ Host {hostanme-serveur-ssh}
 -> extensions -> {cmake:twxs} -> install
 -> trust publisher install
 #------------------------------------------------
-# creer un projet c++
 # extension -> {cmake tools:microsoft}
 # extension -> {cmake:twxs}
+# creer un projet c++
 #------------------------------------------------
 -> ouvrir la palette de commande -> {show and run commands}
 -> {cmake: quick start}
@@ -136,4 +137,15 @@ Host {hostanme-serveur-ssh}
 -> {c++: create a c++ project} -> touche {entree}
 -> {executable: create an executable} -> touche {entree}
 -> ok
+#------------------------------------------------
+# resoudre le probleme d'une configuration defecteuse
+#------------------------------------------------
+...
+# resout le probleme d'une configuration defecteuse
+...
+-> supprimer le dossier {.vscode}
+-> ouvrir le fichier {settings.json}
+-> reediter les configurations vscode
+-> tester les configurations {vscode}
+...
 #------------------------------------------------
