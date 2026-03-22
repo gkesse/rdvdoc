@@ -5,7 +5,7 @@
         "strings": "on"
     },
     "editor.wordBasedSuggestions": "allDocuments",
-    "cmake.sourceDirectory": "C:/rdvrepo/rdvdoc/code/src/001-qt-search-widget",
+    "cmake.sourceDirectory": "C:/rdvrepo/rdvdoc/code/src/qt",
     "cmake.environment": {
         "PATH": "C:/tools/Qt/6.10.0/msvc2022_64/bin"
     }

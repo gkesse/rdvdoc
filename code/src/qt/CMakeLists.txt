@@ -12,16 +12,10 @@ find_package(Qt6 REQUIRED COMPONENTS
     Widgets
 )
 
-set(SRC_FILES
-    main.cpp
-    MainWindow.cpp
-    MainWindow.hpp
-)
+include_directories(${PROJECT_SOURCE_DIR})
 
-add_executable(${PROJECT_NAME}
-    ${SRC_FILES}
-)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE
-    Qt6::Widgets
-)
+add_subdirectory(app)
+add_subdirectory(page)
+add_subdirectory(runner)
+add_subdirectory(widget)
+add_subdirectory(popup)
