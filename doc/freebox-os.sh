@@ -1,7 +1,7 @@
 #------------------------------------------------
-# references freebox-os
+### references freebox-os
 #------------------------------------------------
-# modifier le mot de passe
+### modifier le mot de passe
 #------------------------------------------------
 -> https://mafreebox.freebox.fr/
 -> menu -> connexion -> j ai perdu mon mot de passe
@@ -13,7 +13,7 @@
 ...
 -> nouveau mot de passe -> {password} -> changer le mot de passe
 #------------------------------------------------
-# configurer l'acces a distance
+### configurer l'acces a distance
 #------------------------------------------------
 -> https://mafreebox.freebox.fr/
 -> menu -> parametres -> parametres de la freebox
@@ -27,7 +27,7 @@
 -> port acces distant {http} -> {numero-port-http}
 -> port acces distant securise {https} -> {numero-port-https}
 #------------------------------------------------
-# configurer un profil
+### configurer un profil
 #------------------------------------------------
 -> https://mafreebox.freebox.fr/
 -> menu -> parametres -> profils
@@ -42,7 +42,7 @@
 ...
 -> ok
 #------------------------------------------------
-# ajouter un appareil a un profil
+### ajouter un appareil a un profil
 #------------------------------------------------
 -> https://mafreebox.freebox.fr/
 -> menu -> parametres -> profils
@@ -53,7 +53,7 @@
 ...
 -> ok
 #------------------------------------------------
-# determiner l'adresse ip d'un appareil
+### determiner l'adresse ip d'un appareil
 #------------------------------------------------
 -> https://mafreebox.freebox.fr/
 -> menu -> parametres -> peripheriques reseau
@@ -69,4 +69,6 @@
 -> adresse -> {adresse-ip}
 ...
 -> ok
+#------------------------------------------------
+### end
 #------------------------------------------------
