@@ -1,5 +1,5 @@
 #------------------------------------------------
-### references raspberry-pi-readydev
+### references readydev-raspberry-pi-4
 #------------------------------------------------
 ### installer raspberry-pi-imager
 #------------------------------------------------
