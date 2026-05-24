@@ -955,7 +955,7 @@ _EOF_
 composer update
 ...
 #------------------------------------------------
-### creer un repertoire github
+### creer un depot git sous github
 #------------------------------------------------
 ...
 # se connecte a son compte github avec passkey
@@ -967,6 +967,10 @@ composer update
 ...
 -> chosir une cle d_acces
 -> appareil iphone-ipad-android
+...
+-> se connecter
+-> plus d_options avec authentication
+-> continuer
 ...
 -> ouvrir microsoft authenticator sur samrtphone
 -> scanner le qr_code
@@ -980,6 +984,15 @@ composer update
 -> username or email address -> gkesse
 -> password -> git***
 -> sign in
+...
+# cree un two-factor authentication si non cree
+...
+-> two-factor authentication
+-> more options
+-> 2fa recovery code
+-> begin account or email recovery
+-> i understand, get started
+-> send one-time password
 ...
 # cree un two-factor authentication si non cree
 ...
