@@ -16,7 +16,7 @@
 ...
 -> nouveautes
 -> continuer
--> envoyer automatiquement les statistiques d_utilisation (aucune donnee privee)
+-> envoyer automatiquement les statistiques d_utilisation {aucune donnee privee}
 -> approuver
 -> connectez-vous avec google
 -> {email@gmail.com}
@@ -26,6 +26,8 @@
 #------------------------------------------------
 ...
 # cree une carte mentale
+...
+-> "doc\res\schematic-qt-cpp\schematic-qt.xmind"
 ...
 -> nouvelle carte
 -> carte mentale

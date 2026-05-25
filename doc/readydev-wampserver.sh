@@ -364,11 +364,14 @@ _EOF_
 ...
 << _EOF_
 <?php
+<?php
 session_start();
+
+const SRC_DIR = "src/";
 
 function autoload_register(string $p_in_className)
 {
-    $filename = __DIR__ . "/src/" . $p_in_className . ".php";
+    $filename = __DIR__ . DIRECTORY_SEPARATOR . SRC_DIR . $p_in_className . ".php";
     $filename = str_replace("\\", "/", $filename);
 
     if (is_readable($filename)) {
@@ -955,25 +958,176 @@ _EOF_
 composer update
 ...
 #------------------------------------------------
-### creer un depot git sous github
+### creer un script javascript
 #------------------------------------------------
 ...
-# se connecte a son compte github avec passkey
+# cree le script javascript
 ...
--> https://github.com/
+-> "public\js\scripts.js"
 ...
--> sign in
--> sign in with a passkey
+<< _EOF_
+"use strict";
+
+function runMain() {
+    const main = new app.view.Main();
+    main.run();
+}
+
+runMain();
+_EOF_
 ...
--> chosir une cle d_acces
--> appareil iphone-ipad-android
+#------------------------------------------------
+### creer une classe javascript dans un espace de noms
+#------------------------------------------------
 ...
--> se connecter
--> plus d_options avec authentication
--> continuer
+# creer la classe javascript
 ...
--> ouvrir microsoft authenticator sur samrtphone
--> scanner le qr_code
+-> "public\js\app\view\Main.js"
+...
+<< _EOF_
+"use strict";
+
+var app = app || {};
+app.view = app.view || {};
+
+app.view.Main = class Main {
+    constructor() {
+        console.log("Main constructor...");
+    }
+
+    run() {
+        console.log("Exécution de la méthode Main.run()...");
+    }
+}
+_EOF_
+...
+# appelle le script javascript
+...
+-> "src\app\view\Main.php"
+...
+<< _EOF_
+private function runScriptJs(string &$p_out_text): void {
+    $p_out_text .= \sprintf("<script src='/public/js/app/view/Main.js'></script>\n");
+    $p_out_text .= \sprintf("<script src='/public/js/scripts.js'></script>\n");
+}
+_EOF_
+...
+# affiche la page php
+...
+-> http://localhost:9900/
+...
+# ouvre la console de debogage sous google-chrome
+...
+-> Ctrl + Shift + I
+...
+# actualise la page php
+...
+-> Ctrl + F5
+...
+<< _EOF_
+Main constructor...
+Exécution de la méthode Main.run()...
+_EOF_
+...
+#------------------------------------------------
+### creer une carte mentale sous xmind
+#------------------------------------------------
+...
+# cree une carte mentale
+...
+-> "doc\res\schematic-qt-cpp\schematic-qt.xmind"
+...
+-> nouvelle carte
+-> carte mentale
+-> creer
+...
+#------------------------------------------------
+### configurer le mode rewrite sous wampserver
+#------------------------------------------------
+...
+# active le module rewrite sous wampserver
+...
+-> windows
+-> system-tray
+-> wampserver -> clic-gauche
+-> apache
+-> modules apache
+-> cocher -> rewrite_module
+...
+# edite les regles de redirection dans le fichier .htaccess
+...
+-> "readydev\.htaccess"
+...
+<< _EOF_
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /?page-id=$1 [L,QSA]
+</IfModule>
+_EOF_
+...
+# affiche la page php
+...
+-> http://localhost:9900/home/presentation
+...
+#------------------------------------------------
+### creer un test unitaire javascript sous qunit
+#------------------------------------------------
+...
+# cree la page d'entree des tests
+...
+-> "public\tests\index.php"
+...
+<< _EOF_
+<!DOCTYPE html>
+<html lang='fr'>
+    <head>
+        <title>ReadyDEV | QUnit Tests</title>
+        <meta charset='UTF-8'/>
+        <link rel='shortcut icon' type='image/png' href='/public/data/img/logo.png'/>
+        <link rel='stylesheet' href='https://code.jquery.com/qunit/qunit-2.25.0.css'/>
+    </head>
+    <body>
+        <div id='qunit'></div>
+        <div id='qunit-fixture'></div>
+        <script src='https://code.jquery.com/qunit/qunit-2.25.0.js'></script>
+        <script src='/public/tests/js/app/view/TestMain.js'></script>
+    </body>
+</html>
+_EOF_
+...
+# cree le test unitaire javascript
+...
+-> "public\tests\js\app\view\TestMain.js"
+...
+<< _EOF_
+"use strict";
+
+QUnit.module("TestMain");
+
+QUnit.test('Test_Lecture_Ecriture', function(assert) {
+    assert.equal(3, 3);
+});
+...
+"use strict";
+
+QUnit.module('TestMain', function() {
+    QUnit.test('Test_Lecture_Ecriture', function(assert) {
+        assert.equal(3, 3);
+    });
+});
+_EOF_
+...
+# affiche la page de test unitaire
+...
+-> http://localhost:9900/public/tests/
+...
+#------------------------------------------------
+### creer un depot git sous github
+#------------------------------------------------
 ...
 # se connecte a son compte github
 ...
@@ -985,16 +1139,7 @@ composer update
 -> password -> git***
 -> sign in
 ...
-# cree un two-factor authentication si non cree
-...
--> two-factor authentication
--> more options
--> 2fa recovery code
--> begin account or email recovery
--> i understand, get started
--> send one-time password
-...
-# cree un two-factor authentication si non cree
+# cree une demande de recuperation d'authentification 2fa si perdue
 ...
 -> two-factor authentication
 -> more options
@@ -1013,6 +1158,25 @@ composer update
 -> attendre la reponse dans {2-3} jours ouvres
 ...
 -> return to github
+...
+-> aller dans la boite email du compte
+...
+<< _EOF_
+Vous avez terminé votre demande de désactivation de l'authentification à deux facteurs
+pour le compte @gkesse.
+
+L'assistance GitHub examinera cette demande sous 1 à 3 jours ouvrés.
+
+Les demandes supplémentaires soumises pendant cette période ne seront pas traitées
+par l'assistance GitHub.
+
+Si vous retrouvez les codes de récupération de votre compte entre-temps,
+vous pouvez vous connecter immédiatement à GitHub
+et mettre à jour vos paramètres d'authentification à deux facteurs.
+
+Pour annuler l'examen, cliquez sur ce lien : Annuler la récupération du verrouillage
+de compte suite à l'activation de l'authentification à deux facteurs.
+_EOF_
 ...
 #------------------------------------------------
 ### end
