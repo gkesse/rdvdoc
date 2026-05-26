@@ -1003,7 +1003,7 @@ _EOF_
 ...
 # appelle le script javascript
 ...
--> "src\app\view\Main.php"
+-> "readydev\src\app\view\Main.php"
 ...
 << _EOF_
 private function runScriptJs(string &$p_out_text): void {
@@ -1126,10 +1126,53 @@ _EOF_
 -> http://localhost:9900/public/tests/
 ...
 #------------------------------------------------
-### creer un depot git sous github
+### creer une documentation php sous phpdoc
 #------------------------------------------------
 ...
-# se connecte a son compte github
+# ajoute des commentaires a une classe
+...
+-> "readydev\src\app\view\Main.php"
+...
+<< _EOF_
+/**
+ * Cree la page principale du site.
+ * Permet de creer la page principale du site.
+ * @author Gerard KESSE <team@readydev.com>
+ */
+class Main
+{
+    /**
+     * Cree le corps de la page.
+     * Permet de creer le corps de la page.
+     * @param string $p_out_text Indique le texte de sortie.
+     * @return void
+     */
+    private function runBody(string &$p_out_text): void
+    {
+        $this->runHeader($p_out_text);
+        $this->runView($p_out_text);
+        $this->runPage($p_out_text);
+    }
+}
+_EOF_
+...
+# installe php-documentator
+...
+composer require --dev phpdocumentor/phpdocumentor
+...
+# genere la documentation php
+...
+vendor\bin\phpdoc -d src -t public/doc
+...
+# affiche la documentation php
+...
+-> http://localhost:9900/public/docs
+...
+#------------------------------------------------
+### reinitialiser l'authentification 2fa sous github
+#------------------------------------------------
+...
+# se connecte a votre compte github
 ...
 -> https://github.com/
 ...
@@ -1139,7 +1182,7 @@ _EOF_
 -> password -> git***
 -> sign in
 ...
-# cree une demande de recuperation d'authentification 2fa si perdue
+# cree une demande de recuperation d'authentification 2fa
 ...
 -> two-factor authentication
 -> more options
@@ -1176,6 +1219,140 @@ et mettre à jour vos paramètres d'authentification à deux facteurs.
 
 Pour annuler l'examen, cliquez sur ce lien : Annuler la récupération du verrouillage
 de compte suite à l'activation de l'authentification à deux facteurs.
+_EOF_
+...
+# demarre la reinitialisation de l'authentification 2fa sous email
+...
+<< _EOF_
+Votre demande de désactivation de l'authentification à deux facteurs pour le compte @gkesse
+a été approuvée par l'équipe GitHub.
+
+Pour continuer, cliquez sur ce lien : {Récupération complète du compte}.
+Ce lien sera valide pendant 72 heures.
+
+Si vous souhaitez annuler cette demande, cliquez sur ce lien : {Annuler la demande de récupération du compte}.
+
+Une fois l'accès à votre compte rétabli,
+veuillez suivre nos instructions pour réactiver l'authentification à deux facteurs,
+
+sécuriser à nouveau votre compte et vous assurer qu'il reste protégé.
+_EOF_
+...
+-> {Complete account recovery}
+...
+-> continue
+...
+# se connecte a votre compte github
+...
+-> username or email address -> gkesse
+-> password -> git***
+-> sign in
+...
+# active l'authentification 2fa
+...
+-> enable 2fa now
+...
+-> scanner le qr-code avec l_application microsoft authenticator
+-> saisir the 6-digit code from the authenticator -> 660339
+...
+-> download
+...
+-> i have saved my recovery codes
+...
+-> return to your work
+...
+#------------------------------------------------
+### configurer passkeys sous github
+#------------------------------------------------
+...
+# configure passkeys
+...
+-> menu-photo
+-> settings
+-> password and authentication
+...
+-> sign in method
+-> passkeys
+-> add passkey
+...
+-> add passkey
+...
+-> creer
+...
+-> name of your password manager or account provider -> gkesse
+-> done
+...
+#------------------------------------------------
+### configurer sms-text message sous github
+#------------------------------------------------
+...
+# configure sms-text message
+...
+-> menu-photo
+-> settings
+-> password and authentication
+...
+-> two-factor authentication
+-> sms-text message
+-> add
+...
+-> verify
+...
+-> country or region code -> france +33
+-> phone number -> 06********
+-> send authentication code
+...
+-> verify the code sent to your phone -> 660339
+-> save
+...
+#------------------------------------------------
+### creer un depot git sous github
+#------------------------------------------------
+...
+# cree un depot git
+...
+-> menu-photo
+-> settings
+-> repositories
+...
+-> new
+-> repository name -> gkesse/readydev-wampserver-php
+-> description ->
+...
+<< _EOF_
+Cree un site internet en PHP pour la publication de cours et tutoriels
+adaptés aux sciences de l'ingénieur.
+_EOF_
+...
+-> choose visibility -> public
+-> add README -> on
+-> add .gitignore -> c++
+-> add license -> mit licence
+...
+-> create repository
+...
+# copie l'url https du depot git
+...
+-> code
+-> local
+-> https
+-> https://github.com/gkesse/readydev-wampserver-php.git
+-> copier
+...
+# clone le depot git
+...
+git clone https://github.com/gkesse/readydev-wampserver-php.git
+...
+<< _EOF_
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 195.50 KiB | 17.77 MiB/s, done.
+Total 8 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/gkesse/rdvdoc.git
+   568e963..7bf3372  main -> main
 _EOF_
 ...
 #------------------------------------------------
