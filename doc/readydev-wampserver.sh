@@ -516,7 +516,7 @@ composer require --dev phpunit/phpunit
 ...
 # affiche la version php-unit
 ...
-.\./vendor/bin/phpunit --version
+./vendor/bin/phpunit --version
 ...
 PHPUnit 10.0.0 by Sebastian Bergmann and contributors.
 ...
@@ -1381,6 +1381,245 @@ _EOF_
 -> system-tray
 -> wampserver -> clic-gauche
 -> redemarrer les services
+...
+#------------------------------------------------
+### configurer le systeme de template twig sous php-composer
+#------------------------------------------------
+...
+# installe twig
+...
+composer require twig/twig
+...
+# cree un gestionnaire de template twig
+...
+-> "src\twig\module\Template.php"
+...
+<< _EOF_
+<?php
+
+declare(strict_types=1);
+
+namespace twig\module;
+
+/**
+ * Cree le module de template twig.
+ * Permet de creer le module de template twig.
+ * @package twig\module
+ * @author Gerard KESSE <https://www.readydev.ovh>
+ * @version 1.0.0
+ */
+class Template
+{
+    private \Twig\Environment $twig;
+    private \twig\controller\Template $controller;
+
+    public function __construct(\twig\controller\Template $p_in_controller)
+    {
+        $this->controller = $p_in_controller;
+        $loader = new \Twig\Loader\FilesystemLoader($this->controller->getTemplateDir());
+
+        $this->twig = new \Twig\Environment($loader, [
+            'cache' => false,
+            'debug' => true
+        ]);
+    }
+
+    public function render(string $p_in_view): string
+    {
+        return $this->twig->render((string)$p_in_view . '.twig', $this->controller->getTemplateData());
+    }
+}
+_EOF_
+...
+# cree un controleur de template twig
+...
+-> "src\twig\controller\Template.php"
+...
+<< _EOF_
+<?php
+
+declare(strict_types=1);
+
+namespace twig\controller;
+
+/**
+ * Cree le controleur de template twig.
+ * Permet de creer le controleur de template twig.
+ * @package twig\controller
+ * @author Gerard KESSE <https://www.readydev.ovh>
+ * @version 1.0.0
+ */
+class Template
+{
+    private string $templateDir;
+    public function __construct(string $p_in_templateDir)
+    {
+        $this->templateDir = $p_in_templateDir;
+    }
+
+    public function getTemplateDir(): string
+    {
+        return $this->templateDir;
+    }
+
+    public function getTemplateData(): array
+    {
+        return [];
+    }
+}
+_EOF_
+...
+# cree une page twig
+...
+-> "tests\src\twig\module\test.twig"
+...
+<< _EOF_
+<p>Bonjour {{ name }}</p>
+_EOF_
+...
+# charge une page twig
+...
+-> "tests\src\twig\module\TemplateModuleTest.php"
+...
+<< _EOF_
+$controller = $this->createMock(\twig\controller\Template::class);
+$controller->expects($this->once())
+    ->method('getTemplateDir')
+    ->willReturn(__DIR__);
+$controller->expects($this->once())
+    ->method('getTemplateData')
+    ->willReturn(['name' => 'ReadyDEV']);
+...
+$template = new \twig\module\Template($controller);
+$output = $template->render("test");
+...
+$this->assertSame($output, "<p>Bonjour ReadyDEV</p>");
+_EOF_
+...
+#------------------------------------------------
+### configurer une varaible d'environnement sous apache
+#------------------------------------------------
+...
+# configure une variable d'environnement
+...
+-> "file:///C:/wamp64/bin/apache/apache2.4.65/conf/extra/httpd-vhosts.conf"
+...
+<< _EOF_
+<VirtualHost *:9900>
+    ServerName localhost
+    ServerAlias localhost
+    DocumentRoot C:/rdvrepo/app/readydev-wampserver-php
+    ErrorLog C:/rdvrepo/app/readydev-wampserver-php/logs/error.log
+    CustomLog C:/rdvrepo/app/readydev-wampserver-php/logs/access.log combined
+
+    SetEnv APP_ENV "dev"
+    SetEnv APP_DEBUG "on"
+
+    <Directory "C:/rdvrepo/app/readydev-wampserver-php/">
+        Options +Indexes +Includes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require local
+    </Directory>
+</VirtualHost>
+_EOF_
+...
+# redemarre les service wampserver
+...
+-> windows
+-> system-tray
+-> wampserver -> clic-gauche
+-> redemarrer les services
+...
+# analyse les variables d'environnement
+...
+<< _EOF_
+private const string PARAM_APP_ENV = "APP_ENV";
+private const string PARAM_APP_ENV_DEV = "dev";
+private const string PARAM_APP_DEBUG = "APP_DEBUG";
+private const string PARAM_APP_DEBUG_ON = "on";
+...
+public function isDebug(): bool
+{
+    if (!isset($_SERVER[self::PARAM_APP_ENV])) {
+        return false;
+    }
+    if (!isset($_SERVER[self::PARAM_APP_DEBUG])) {
+        return false;
+    }
+
+    $appEnv = $_SERVER[self::PARAM_APP_ENV];
+    $appDebug = $_SERVER[self::PARAM_APP_DEBUG];
+
+    if ($appEnv !== self::PARAM_APP_ENV_DEV) {
+        return false;
+    }
+    if ($appDebug !== self::PARAM_APP_DEBUG_ON) {
+        return false;
+    }
+
+    return true;
+}
+_EOF_
+...
+# affiche la page php
+...
+-> http://localhost:9900/
+...
+# affiche les variables d'environnement dans la page php
+...
+<< _EOF_
+<pre class='xdebug-var-dump' dir='ltr'>
+    <small>C:\rdvrepo\app\readydev-wampserver-php\vendor\twig\twig\src\Extension\DebugExtension.php:57:</small>
+    <b>object</b>(<i>app\php\model\MenuList</i>)[<i>621</i>]
+    <i>private</i> <i>array</i> 'menuList' <font color='#888a85'>=&gt;</font>
+    <b>array</b> <i>(size=10)</i>
+      0 <font color='#888a85'>=&gt;</font>
+        <b>object</b>(<i>app\php\model\Menu</i>)[<i>9</i>]
+          <i>public</i> <i>int</i> 'index' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>1</font>
+          <i>public</i> <i>int</i> 'parentIndex' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+          <i>public</i> <i>string</i> 'name' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'home'</font> <i>(length=4)</i>
+          <i>public</i> <i>string</i> 'label' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Accueil'</font> <i>(length=7)</i>
+          <i>public</i> <i>string</i> 'title' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Accueil'</font> <i>(length=7)</i>
+          <i>public</i> <i>string</i> 'link' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>''</font> <i>(length=0)</i>
+          <i>public</i> <i>bool</i> 'isActive' <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>false</font>
+      1 <font color='#888a85'>=&gt;</font>
+        <b>object</b>(<i>app\php\model\Menu</i>)[<i>10</i>]
+          <i>public</i> <i>int</i> 'index' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>2</font>
+          <i>public</i> <i>int</i> 'parentIndex' <font color='#888a85'>=&gt;</font> <small>int</small> <font color='#4e9a06'>0</font>
+          <i>public</i> <i>string</i> 'name' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'home'</font> <i>(length=4)</i>
+          <i>public</i> <i>string</i> 'label' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Accueil'</font> <i>(length=7)</i>
+          <i>public</i> <i>string</i> 'title' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'Accueil'</font> <i>(length=7)</i>
+          <i>public</i> <i>string</i> 'link' <font color='#888a85'>=&gt;</font> <small>string</small> <font color='#cc0000'>'/'</font> <i>(length=1)</i>
+          <i>public</i> <i>bool</i> 'isActive' <font color='#888a85'>=&gt;</font> <small>boolean</small> <font color='#75507b'>false</font>
+</pre>
+_EOF_
+...
+#------------------------------------------------
+### configurer le mode debug sous twig
+#------------------------------------------------
+...
+# configure le mode debug
+...
+-> "src\twig\module\Template.php"
+...
+<< _EOF_
+public function __construct(\twig\controller\Template $p_in_controller)
+{
+    $this->controller = $p_in_controller;
+
+    $loader = new \Twig\Loader\FilesystemLoader($this->controller->getTemplateDir());
+    $debug = new \app\php\controller\Debug();
+
+    $this->twig = new \Twig\Environment($loader, [
+        'cache' => false,
+        'debug' => $debug->isDebug()
+    ]);
+
+    if ($debug->isDebug()) {
+        $this->twig->addExtension(new \Twig\Extension\DebugExtension());
+    }
+}
+_EOF_
 ...
 #------------------------------------------------
 ### end
